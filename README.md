@@ -4,10 +4,10 @@
 
 ## Problems
 
-| Problem Category | Problem Name     | Problem Link                                    | Difficulty Level |
-| :---: | :---: | :---: | :---: |
-| Implementation   | Beautiful Matrix | https://codeforces.com/problemset/problem/263/A | 1                |
-| Implementation   | Beautiful Matrix | https://codeforces.com/problemset/problem/263/A | 1                |
-| Implementation   | Beautiful Matrix | https://codeforces.com/problemset/problem/263/A | 1                |
-| --- | --- | --- | --- |
-| --- | --- | --- | --- |
+| Problem Category | Problem Link | Difficulty Level |
+| :---: | :---: | :---: |
+| Implementation | https://codeforces.com/problemset/problem/263/A | 1 |
+| Implementation | https://codeforces.com/problemset/problem/155/A | 1 |
+| String | https://codeforces.com/problemset/problem/112/A | 1 |
+| --- | --- | --- |
+| --- | --- | --- |

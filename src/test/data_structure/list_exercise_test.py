@@ -19,7 +19,7 @@ class TestList(unittest.TestCase):
         self.assertEqual(find_sum([1, 2, 3, 4]), 10)
 
     def test_sort_list_bubble(self):
-        self.assertEqual(sort_list_bubble_ass([10, 9, 8, 7, 5, 1, 2, 4, 3, 6]), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        self.assertEqual(sort_list_bubble_asc([10, 9, 8, 7, 5, 1, 2, 4, 3, 6]), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
     def test_sort_list_bubble_dsc(self):
         self.assertEqual(sort_list_bubble_dsc([10, 9, 8, 7, 5, 1, 2, 4, 3, 6]), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1])

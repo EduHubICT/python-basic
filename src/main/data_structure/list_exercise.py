@@ -30,7 +30,7 @@ def find_sum(list_of_number) -> int:
     return summation
 
 
-def sort_list_bubble_ass(list_of_number):
+def sort_list_bubble_asc(list_of_number):
     list_length = len(list_of_number)
     for index in range(0, list_length - 1):
         for ind in range(0, list_length - index - 1):

@@ -20,7 +20,7 @@ def slicing(list1):
     lst = []
     i = 0
     for index in range(lst_len):
-        if index > 2:
+        if index > 1:
             lst.append(list1[index])
             i+=1
     return lst

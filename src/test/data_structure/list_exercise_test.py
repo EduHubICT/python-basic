@@ -27,6 +27,9 @@ class TestList(unittest.TestCase):
 
     def test_sort_list_bubble_dsc(self):
         self.assertEqual(sort_list_bubble_dsc([10, 9, 8, 7, 5, 1, 2, 4, 3, 6]), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
+        
+    def test_slicing_list(self):
+        self.assertEqual(slicing([1,2,3,4,5,6]),[4,5,6])
 
         
 if __name__ == '__main__':

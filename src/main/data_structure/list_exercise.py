@@ -16,6 +16,17 @@ def sort_list(list_1):
     return sorted_lst
 
 
+def slicing(list1):
+    lst_len = len(list1)
+    lst = []
+    i = 0
+    for index in range(lst_len):
+        if index > 2:
+            lst.append(list1[index])
+            i+=1
+    return lst
+
+
 def find_max(list_of_number):
     max_val = -1000000
     for number in list_of_number:
@@ -61,4 +72,5 @@ def sort_list_bubble_dsc(list_of_number):
                 list_of_number[ind + 1] = temp
 
     return list_of_number
+
 

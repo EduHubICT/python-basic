@@ -30,6 +30,8 @@ class TestList(unittest.TestCase):
         
     def test_slicing_list(self):
         self.assertEqual(slicing([1,2,3,4,5,6]),[4,5,6])
+    def test_replace(self):
+        self.assertEqual(rep([1,3,3]),[1,2,3])
 
         
 if __name__ == '__main__':

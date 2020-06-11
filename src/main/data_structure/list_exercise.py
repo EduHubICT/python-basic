@@ -1,4 +1,3 @@
-
 def find_average(list_of_number):
     summation = 0
     for number in list_of_number:

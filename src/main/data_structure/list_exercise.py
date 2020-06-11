@@ -24,3 +24,25 @@ print(list2+[9,10]+['Zaman'])
 # insert 5 at position 5
 list1.insert(5, 5)
 print(list1)
+
+#Pop - removes and returns the item
+print(list1.pop(3))
+print(list1.pop())
+
+#Remove – removes the first occurrence of the specified value
+list1.remove(4)
+print(list1)
+
+#Reverse - reverse all the item in the list
+list1.reverse()
+print(list1)
+
+#Count - counts number of items in the list
+print(list1.count(5))
+
+#Sort - sort in the numerical order
+list2.sort()
+print(list2)
+
+list2.sort(reverse=True)
+print(list2)

@@ -1,8 +1,8 @@
 def appended(list1,list2):
-    print(list1)
+    
     list1.extend(list2)
-    print(list1)
-    print('Extended List: ',list1)
+    
+    print('My local Changes')
     return list1
 
 

@@ -14,6 +14,7 @@ def find_average(list_of_number):
     return summation / len(list_of_number)
 
     
+
 def sort_list(list_of_number):
     
     sorted_list = sorted(list_of_number)

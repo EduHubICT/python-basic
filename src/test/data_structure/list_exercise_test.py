@@ -38,6 +38,18 @@ class TestList(unittest.TestCase):
         self.assertEqual(binary_search([1, 5, 15, 35, 100, 305, 390], 1000), "No")
         self.assertEqual(binary_search([1, 5, 15, 35, 100, 305, 390], 390), "Yes")
         self.assertEqual(binary_search([1, 5], 100), "No")
+        
+    def test_recursive_binary_search(self):
+        self.assertEqual(binary_search_recursive([1,2,3,4,5,6,7,8],3,0,7),'Yes')
+        
+    def test_binary_search_index(self):
+        self.assertEqual(binary_search_target_index([1, 5, 15, 100, 100, 305, 390], 100,True), 3)
+        
+    def test_binary_search_similar_target_count(self):
+        self.assertEqual(binary_search_count([1, 5, 15, 100, 100, 305, 390], 100), 2)
+        
+    def test_binary_search_circular_sorted(self):
+        self.assertEqual(binary_search_circular_sorted([12,13,14,1,2,3,4],14),'Yes')
 
         
 if __name__ == '__main__':

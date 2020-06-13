@@ -13,7 +13,6 @@ def find_average(list_of_number):
 
     return summation / len(list_of_number)
 
- def sort_list(list_of_number):
     
     
 def sort_list(list_of_number):
@@ -142,7 +141,7 @@ def binary_search_target_index(list_of_number, value, first_index):
             start = mid + 1
     return target_index
   
-  
+
 def binary_search_count(list_of_number, value):
     
     first_index = binary_search_target_index(list_of_number, value, True)

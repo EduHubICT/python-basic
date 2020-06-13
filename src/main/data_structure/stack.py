@@ -37,5 +37,5 @@ class Stack:
         return len(self.stack)
 
     # to see elements of stack
-    def show(self):
-        print(self.stack)
+    def display(self):
+        return self.stack

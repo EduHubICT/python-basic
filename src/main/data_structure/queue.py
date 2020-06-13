@@ -12,11 +12,17 @@ class Queue:
 
     # front to return starting element from queue
     def front(self):
-        return self.queue[0]
+        if Queue.empty(self) is False:
+            return self.queue[0]
+        else:
+            return "An empty Queue."
 
     # pop to remove front element from queue
     def pop(self):
-        return self.queue.pop(0)
+        if Queue.empty(self) is False:
+            self.queue.pop(0)
+        else:
+            return "An empty Queue."
 
     # to check queue size
     def size(self):
@@ -29,3 +35,6 @@ class Queue:
         else:
             return True
 
+    # to see elements of queue
+    def display(self):
+        return self.queue

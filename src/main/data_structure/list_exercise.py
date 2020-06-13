@@ -1,18 +1,27 @@
+from src.main.logger.py_logger import PyLogger
+
+
+logger = PyLogger.get_configured_logger()
+
+
 def find_average(list_of_number):
     summation = 0
     for number in list_of_number:
         summation = summation + number
-    print('Average: ', summation / len(list_of_number))
+
+    logger.info('Average: {}'.format(summation / len(list_of_number)))
 
     return summation / len(list_of_number)
 
-
-def sort_list(list_1):
+ def sort_list(list_of_number):
     
-    sorted_lst = sorted(list_1)
-    print("Sorted list :", sorted_lst)
-
-    return sorted_lst
+    
+def sort_list(list_of_number):
+    
+    sorted_list = sorted(list_of_number)
+    logger.info("Sorted list : {}".format(sorted_list))
+    
+    return sorted_list
 
 
 def slicing(list1):
@@ -97,7 +106,7 @@ def binary_search(list_of_number, value):
     return "No"
 
 
-def binary_search_recursive(list_of_numbers,target,start,end):
+def binary_search_recursive(list_of_numbers, target, start, end):
     if start>end:
         return 'NO'
     mid = start + (end - start) // 2
@@ -105,9 +114,9 @@ def binary_search_recursive(list_of_numbers,target,start,end):
     if list_of_numbers[mid] == target:
         return 'Yes'
     elif list_of_numbers[mid] > target:
-        return binary_search_recursive(list_of_numbers,target,start,mid-1)
+        return binary_search_recursive(list_of_numbers, target, start, mid-1)
     elif list_of_numbers[mid] < target:
-        return binary_search_recursive(list_of_numbers,target,mid+1,end)
+        return binary_search_recursive(list_of_numbers, target, mid+1, end)
     
     
 def binary_search_target_index(list_of_number, value, first_index):
@@ -132,21 +141,21 @@ def binary_search_target_index(list_of_number, value, first_index):
         else:
             start = mid + 1
     return target_index
-def binary_search_count(list_of_number,value):
+  
+  
+def binary_search_count(list_of_number, value):
     
-    first_index = binary_search_target_index(list_of_number,value,True)
+    first_index = binary_search_target_index(list_of_number, value, True)
     
     if first_index != -1:
-        last_index = binary_search_target_index(list_of_number,value,False)
+        last_index = binary_search_target_index(list_of_number, value, False)
         count = last_index - first_index + 1
         
     return count
 
 
 # CircularRotatedSorted arrary Example : [12,13,14,1,2,3,4] or [2,3,4,12,13,14,1]
-
-def binary_search_circular_sorted(list_of_numbers,value):
-    
+def binary_search_circular_sorted(list_of_numbers, value):
     start = 0
     end = len(list_of_numbers) -1
     

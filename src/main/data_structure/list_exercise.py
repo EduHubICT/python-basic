@@ -1,21 +1,25 @@
+from src.main.logger.py_logger import PyLogger
+
+
+logger = PyLogger.get_configured_logger()
+
+
 def find_average(list_of_number):
     summation = 0
     for number in list_of_number:
         summation = summation + number
-    print('Average: ', summation / len(list_of_number))
+
+    logger.info('Average: {}'.format(summation / len(list_of_number)))
 
     return summation / len(list_of_number)
 
 
-def sort_list(list_1):
+def sort_list(list_of_number):
     
-    sorted_lst = sorted(list_1)
-    print("Sorted list :", sorted_lst)
-
+    sorted_list = sorted(list_of_number)
+    logger.info("Sorted list : {}".format(sorted_list))
     
-    list1.extend(list2)
-
-    print('My remote changes')
+    return sorted_list
 
 
 def slicing(list1):

@@ -107,7 +107,7 @@ def binary_search(list_of_number, value):
 def find_square(list_of_numbers):
     list_of_numbers_square = []
     for number in list_of_numbers:
-        number = number*number
+        number = number * number
         list_of_numbers_square.append(number)
     return list_of_numbers_square
 

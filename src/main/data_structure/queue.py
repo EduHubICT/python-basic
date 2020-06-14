@@ -12,16 +12,16 @@ class Queue:
 
     # front to return starting element from queue
     def front(self):
-        try:
+        if Queue.empty(self) is False:
             return self.queue[0]
-        except IndexError:
+        else:
             raise IndexError("You are trying to front in an empty queue.")
 
     # pop to remove front element from queue
     def pop(self):
-        try:
+        if Queue.empty(self) is False:
             self.queue.pop(0)
-        except IndexError:
+        else:
             raise IndexError("You are trying to pop in an empty queue.")
 
     # to check queue size

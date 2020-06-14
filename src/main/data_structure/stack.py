@@ -8,16 +8,16 @@ class Stack:
 
     # this returns the top item of stack
     def top(self):
-        try:
+        if Stack.empty(self) is False:
             return self.stack[-1]
-        except IndexError:
+        else:
             raise IndexError("You are trying to top in an empty stack.")
 
     # pop to remove an item from stack
     def pop(self):
-        try:
+        if Stack.empty(self) is False:
             self.stack.pop(-1)
-        except IndexError:
+        else:
             raise IndexError("You are popping from in an empty stack.")
 
     # push to append an item in stack

@@ -15,7 +15,7 @@ def find_average(list_of_number):
 
     
 
-def sort_list(list_of_number):
+def list_sort(list_of_number):
     
     sorted_list = sorted(list_of_number)
     logger.info("Sorted list : {}".format(sorted_list))
@@ -23,7 +23,7 @@ def sort_list(list_of_number):
     return sorted_list
 
 
-def slicing(list1):
+def list_slicing(list1):
     lst_len = len(list1)
     lst = []
     i = 0
@@ -34,7 +34,7 @@ def slicing(list1):
     return lst
 
 
-def rep(list1):
+def list_element_replacement(list1):
     for index in range(len(list1)):
         if index == 1:
             list1[index] = 2

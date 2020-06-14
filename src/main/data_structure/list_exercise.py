@@ -13,13 +13,11 @@ def find_average(list_of_number):
 
     return summation / len(list_of_number)
 
-    
 
 def list_sort(list_of_number):
-    
     sorted_list = sorted(list_of_number)
     logger.info("Sorted list : {}".format(sorted_list))
-    
+
     return sorted_list
 
 
@@ -106,7 +104,7 @@ def binary_search(list_of_number, value):
 
 
 def binary_search_recursive(list_of_numbers, target, start, end):
-    if start>end:
+    if start > end:
         return 'NO'
     mid = start + (end - start) // 2
     
@@ -128,11 +126,11 @@ def binary_search_target_index(list_of_number, value, first_index):
         mid = start + (end - start) // 2
         if list_of_number[mid] == value:
             target_index = mid
-            # looking for target_value and its first_index or last_index in the sorted list .
-            # [0,1,2,2,2,3,4,5] our target value = 2 and we looking 
-            # for the first indexed 2 or last indexed 2 in the list
+            # looking for target_value and its first_index or last_index in the
+            # sorted list .[0,1,2,2,2,3,4,5] our target value = 2 and we
+            # looking for the first indexed 2 or last indexed 2 in the list
             if first_index:
-                end  = mid - 1 
+                end = mid - 1 
             else:
                 start = mid + 1
         elif list_of_number[mid] > value:
@@ -153,12 +151,13 @@ def binary_search_count(list_of_number, value):
     return count
 
 
-# CircularRotatedSorted arrary Example : [12,13,14,1,2,3,4] or [2,3,4,12,13,14,1]
+# CircularRotatedSorted arrary Example : [12,13,14,1,2,3,4] 
+# or [2,3,4,12,13,14,1]
 def binary_search_circular_sorted(list_of_numbers, value):
     start = 0
     end = len(list_of_numbers) - 1
     
-    while start <= end :
+    while start <= end:
         mid = start + (end-start) // 2 
         
         if list_of_numbers[mid] == value:
@@ -170,10 +169,9 @@ def binary_search_circular_sorted(list_of_numbers, value):
             else:
                 end = mid - 1
         
-        elif list_of_numbers[start] <= list_of_numbers[mid] :
+        elif list_of_numbers[start] <= list_of_numbers[mid]:
             if list_of_numbers[start] <= value < list_of_numbers[mid]:
                 end = mid - 1
             else:
                 start = mid + 1
-    return -1
-                
+    return -1        

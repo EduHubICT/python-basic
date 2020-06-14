@@ -14,15 +14,15 @@ class Queue:
     def front(self):
         try:
             return self.queue[0]
-        except IndexError:
-            raise
+        except IndexError as e:
+            raise IndexError("You are trying to front in an empty queue.")
 
     # pop to remove front element from queue
     def pop(self):
         try:
             self.queue.pop(0)
-        except IndexError:
-            raise
+        except IndexError as e:
+            raise IndexError("You are trying to pop in an empty queue.")
 
     # to check queue size
     def size(self):

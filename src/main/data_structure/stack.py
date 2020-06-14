@@ -10,15 +10,15 @@ class Stack:
     def top(self):
         try:
             return self.stack[-1]
-        except IndexError:
-            raise
+        except IndexError as e:
+            raise IndexError("You can't perform this operation in an empty stack.")
 
     # pop to remove an item from stack
     def pop(self):
         try:
             self.stack.pop(-1)
-        except IndexError:
-            raise
+        except IndexError as e:
+            raise IndexError("You are popping from an empty stack")
 
     # push to append an item in stack
     def push(self, value):
@@ -27,7 +27,7 @@ class Stack:
     # to check stack is empty or not
     # to verify any invalid actions
     def empty(self):
-        if Stack.size(self) <= 0:
+        if self.size() <= 0:
             return True
         else:
             return False

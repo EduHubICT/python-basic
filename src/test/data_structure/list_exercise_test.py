@@ -42,6 +42,7 @@ class TestList(unittest.TestCase):
 
     def test_find_square(self):
         self.assertEqual(find_square([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), [1, 4, 9, 16, 25, 36, 49, 64, 81, 100])
+        self.assertEqual(find_square([20, 12, 11]), [400, 144, 121])
 
 
 if __name__ == '__main__':

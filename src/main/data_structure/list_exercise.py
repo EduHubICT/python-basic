@@ -103,3 +103,22 @@ def binary_search(list_of_number, value):
 
     return "No"
 
+
+def insertion_sort_asc(list_of_number):
+    for item in range(1, len(list_of_number)):
+        ind = item - 1
+        adjacent_item = list_of_number[item]
+        while ind >= 0 and list_of_number[ind] > adjacent_item:
+            list_of_number[ind + 1] = list_of_number[ind]
+            ind = ind - 1
+        list_of_number[ind+1] = adjacent_item
+
+    return list_of_number
+
+
+
+
+
+
+
+

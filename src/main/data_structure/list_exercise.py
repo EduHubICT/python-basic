@@ -112,7 +112,6 @@ def insertion_sort_asc(list_of_number):
             list_of_number[ind + 1] = list_of_number[ind]
             ind = ind - 1
         list_of_number[ind+1] = adjacent_item
-
     return list_of_number
 
 
@@ -124,16 +123,4 @@ def insertion_sort_dsc(list_of_number):
             list_of_number[ind + 1] = list_of_number[ind]
             ind = ind - 1
         list_of_number[ind + 1] = adjacent_item
-
     return list_of_number
-
-
-
-
-
-
-
-
-
-
-

@@ -104,6 +104,33 @@ def binary_search(list_of_number, value):
     return "No"
 
 
+def find_square(list_of_numbers):
+    list_of_numbers_square = []
+    for number in list_of_numbers:
+        number = number * number
+        list_of_numbers_square.append(number)
+    return list_of_numbers_square
+
+
+def find_prime_number(list_of_numbers):
+    is_prime_list = []
+    for num in list_of_numbers:
+        if num > 1:
+            for i in range(2, num):
+                if (num % i) == 0:
+                    is_prime_list.append(False)
+                    break
+            else:
+                is_prime_list.append(True)
+
+        # if input number is less than
+        # or equal to 1, it is not prime
+        else:
+            is_prime_list.append(False)
+
+    return is_prime_list
+
+  
 def insertion_sort_asc(list_of_number):
     for item in range(1, len(list_of_number)):
         ind = item - 1
@@ -124,3 +151,4 @@ def insertion_sort_dsc(list_of_number):
             ind = ind - 1
         list_of_number[ind + 1] = adjacent_item
     return list_of_number
+

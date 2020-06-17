@@ -44,6 +44,9 @@ class TestList(unittest.TestCase):
         self.assertEqual(find_square([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), [1, 4, 9, 16, 25, 36, 49, 64, 81, 100])
         self.assertEqual(find_square([20, 12, 11]), [400, 144, 121])
 
+    def test_find_prime(self):
+        self.assertEqual(find_prime_number([11, 12, 33, 84, 95, 101]), [True, False, False, False, False, True])
+
 
 if __name__ == '__main__':
     unittest.main()

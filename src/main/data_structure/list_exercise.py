@@ -21,11 +21,11 @@ def list_sort(list_of_number):
     return sorted_list
 
 
-def list_slicing(list1):
-    lst_len = len(list1)
-    lst = []
+def slice_list(list1):
+    list_len = len(list1)
+    list = []
     i = 0
-    for index in range(lst_len):
+    for index in range(list_len):
         if index > 2:
             lst.append(list1[index])
             i += 1

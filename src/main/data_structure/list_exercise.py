@@ -103,7 +103,6 @@ def binary_search(list_of_number, value):
     return "No"
 
 
-<<<<<<< HEAD
 def binary_search_recursive(list_of_numbers, target, start, end):
     if start > end:
         return 'NO'
@@ -176,7 +175,8 @@ def binary_search_circular_sorted(list_of_numbers, value):
             else:
                 start = mid + 1
     return -1        
-=======
+
+
 def find_square(list_of_numbers):
     list_of_numbers_square = []
     for number in list_of_numbers:
@@ -224,5 +224,3 @@ def insertion_sort_dsc(list_of_number):
             ind = ind - 1
         list_of_number[ind + 1] = adjacent_item
     return list_of_number
-
->>>>>>> 6c57ea79e36fe2aaaca02e0c6d4a2cf5a9643d02

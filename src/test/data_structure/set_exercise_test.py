@@ -1,27 +1,43 @@
 import unittest
-
 from src.main.data_structure.set_exercise import *
 
 
-class TestSet(unittest.TestCase):
+class SetTest(unittest.TestCase):
     def test_unique_value(self):
         self.assertEqual(create_unique_value([ 1, 1, 2, 4, 3, 5, 3]), { 1, 2, 3, 4, 5})
 
-    def test_accessing_value_in_set(self):
+    def test_access_value_in_set(self):
         self.assertEqual(accessing_value_in_set({1, 3, 5, 6, 8, 9}, 3), 'yes')
        
     def test_add_remove_in_set(self):
         self.assertEqual(add_remove_in_set({1, 3, 5, 6, 8, 9}, 2, None), 'Add')
         self.assertEqual(add_remove_in_set({1, 3, 5, 6, 8, 9}, None, 9), 'Remove')
-        
-    def test_union_intersection_in_set(self):
-        self.assertEqual(union_intersection_in_set({1, 3, 5}, {2, 4, 6}, 'Union'), 'Union')
-        self.assertEqual(union_intersection_in_set({1, 3, 5}, {2, 3, 6}, 'Intersection'), 'Intersection')
-        
-    def test_difference_compare_in_set(self):
-        self.assertEqual(difference_compare_in_set({1, 3, 5}, {2, 4, 6}, 'Difference'), 'Difference')
-        self.assertEqual(difference_compare_in_set({1, 3, 5}, {1, 3, 5, 7, 9}, 'Compare'), 'Subset')
-        self.assertEqual(difference_compare_in_set({1, 3, 5, 7, 9, 11,13}, {1, 3, 5, 7, 9}, 'Compare'), 'Superset')
+    def test_find_union(self):
+        set_a = {"a", "b", "c"}
+        set_b = {"c", "d"}
+        self.assertEqual(find_union(set_a, set_b), set_a.union(set_b))
+
+    def test_find_intersection(self):
+        set_a = {"a", "b", "c"}
+        set_b = {"c", "d", "e"}
+        self.assertEqual(find_intersection(set_a, set_b), set_a.intersection(set_b))
+
+    def test_find_differences(self):
+        set_a = {"a", "b", "c"}
+        set_b = {"c", "d"}
+        self.assertEqual(find_differences(set_a, set_b), set_a.difference(set_b))
+
+    def test_disjoint(self):
+        self.assertTrue(find_disjoint({"a", "b"}, {"c", "d"}))
+        self.assertFalse(find_disjoint({"a", "b", "c"}, {"c", "d"}))
+
+    def test_subsets(self):
+        self.assertTrue(find_subsets({"a", "c", "b"}, {"b", "e", "f", "c", "a"}))
+        self.assertFalse(find_subsets({"a", "d", "c"}, {"a", "b", "c", "e"}))
+
+    def test_supersets(self):
+        self.assertTrue(find_supersets({"b", "e", "f", "c", "a"}, {"a", "c", "b"}))
+        self.assertFalse(find_supersets({"a", "b", "c", "e"}, {"a", "d", "c"}))
 
 
 if __name__ == '__main__':

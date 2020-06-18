@@ -111,9 +111,9 @@ def binary_search_recursive(list_of_numbers, target, start, end):
     if list_of_numbers[mid] == target:
         return 'Yes'
     elif list_of_numbers[mid] > target:
-        return binary_search_recursive(list_of_numbers, target, start, mid-1)
+        return binary_search_recursive(list_of_numbers, target, start, mid - 1)
     elif list_of_numbers[mid] < target:
-        return binary_search_recursive(list_of_numbers, target, mid+1, end)
+        return binary_search_recursive(list_of_numbers, target, mid + 1, end)
     
     
 def binary_search_target_index(list_of_number, value, first_index):

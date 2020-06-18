@@ -1,6 +1,5 @@
 import unittest
 
-
 from src.main.data_structure.list_exercise import *
 
 
@@ -39,6 +38,7 @@ class TestList(unittest.TestCase):
         self.assertEqual(binary_search([1, 5, 15, 35, 100, 305, 390], 390), "Yes")
         self.assertEqual(binary_search([1, 5], 100), "No")
 
+<<<<<<< HEAD
     def test_recursive_binary_search(self):
         self.assertEqual(binary_search_recursive([1, 2, 3, 4, 5, 6, 7, 8], 3, 0, 7), 'Yes')
 
@@ -52,5 +52,26 @@ class TestList(unittest.TestCase):
         self.assertEqual(binary_search_circular_sorted([12, 13, 14, 1, 2, 3, 4], 14), 'Yes')
 
         
+=======
+    def test_find_square(self):
+        self.assertEqual(find_square([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), [1, 4, 9, 16, 25, 36, 49, 64, 81, 100])
+        self.assertEqual(find_square([20, 12, 11]), [400, 144, 121])
+
+    def test_find_prime(self):
+        self.assertEqual(find_prime_number([11, 12, 33, 84, 95, 101]), [True, False, False, False, False, True])
+
+    def test_insertion_sort_asc(self):
+        self.assertEqual(insertion_sort_asc([5, 4, 3, 2, 1]), [1, 2, 3, 4, 5])
+        self.assertEqual(insertion_sort_asc([5, 10, 3, 22, 23, 24, 25]), [3, 5, 10, 22, 23, 24, 25])
+        self.assertEqual(insertion_sort_asc([10, 9, 8, 7, 5, 1, 2, 4, 3, 6]), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+    def test_insertion_sort_dsc(self):
+        self.assertEqual(insertion_sort_dsc([1, 2, 3, 4, 5]), [5, 4, 3, 2, 1])
+        self.assertEqual(insertion_sort_dsc([5, 10, 3, 22, 23, 24, 25]), [25, 24, 23, 22, 10, 5, 3])
+        self.assertEqual(insertion_sort_dsc([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
+
+
+
+>>>>>>> 6c57ea79e36fe2aaaca02e0c6d4a2cf5a9643d02
 if __name__ == '__main__':
     unittest.main()

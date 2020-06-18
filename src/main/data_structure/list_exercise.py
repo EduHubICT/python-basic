@@ -103,6 +103,7 @@ def binary_search(list_of_number, value):
     return "No"
 
 
+<<<<<<< HEAD
 def binary_search_recursive(list_of_numbers, target, start, end):
     if start > end:
         return 'NO'
@@ -175,3 +176,53 @@ def binary_search_circular_sorted(list_of_numbers, value):
             else:
                 start = mid + 1
     return -1        
+=======
+def find_square(list_of_numbers):
+    list_of_numbers_square = []
+    for number in list_of_numbers:
+        number = number * number
+        list_of_numbers_square.append(number)
+    return list_of_numbers_square
+
+
+def find_prime_number(list_of_numbers):
+    is_prime_list = []
+    for num in list_of_numbers:
+        if num > 1:
+            for i in range(2, num):
+                if (num % i) == 0:
+                    is_prime_list.append(False)
+                    break
+            else:
+                is_prime_list.append(True)
+
+        # if input number is less than
+        # or equal to 1, it is not prime
+        else:
+            is_prime_list.append(False)
+
+    return is_prime_list
+
+  
+def insertion_sort_asc(list_of_number):
+    for item in range(1, len(list_of_number)):
+        ind = item - 1
+        adjacent_item = list_of_number[item]
+        while ind >= 0 and list_of_number[ind] > adjacent_item:
+            list_of_number[ind + 1] = list_of_number[ind]
+            ind = ind - 1
+        list_of_number[ind+1] = adjacent_item
+    return list_of_number
+
+
+def insertion_sort_dsc(list_of_number):
+    for item in range(1, len(list_of_number)):
+        ind = item - 1
+        adjacent_item = list_of_number[item]
+        while ind >= 0 and list_of_number[ind] < adjacent_item:
+            list_of_number[ind + 1] = list_of_number[ind]
+            ind = ind - 1
+        list_of_number[ind + 1] = adjacent_item
+    return list_of_number
+
+>>>>>>> 6c57ea79e36fe2aaaca02e0c6d4a2cf5a9643d02

@@ -42,12 +42,11 @@ class Dict:
     def clear(self):
         return self.dict.clear()
 
-    # to return dict items
-    def items(self):
-        logger.info('{}'.format(self.dict.items()))
-        return self.dict.items()
-
     # to return dict keys
     def keys(self):
         return self.dict.keys()
+
+    # to return dict values
+    def values(self):
+        return self.dict.values()
 

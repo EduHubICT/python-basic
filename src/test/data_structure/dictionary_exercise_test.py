@@ -22,14 +22,11 @@ class DictTest(unittest.TestCase):
 
     def test_keys(self):
         _dict = Dict({'Key1': 1, 'Key2': 2})
-        _string = str("dict_keys(['Key1', 'Key2'])")
+        self.assertEqual(list(_dict.keys()), list(['Key1', 'Key2']))
 
-        self.assertEqual(str(_dict.keys()), _string)
-
-    def test_items(self):
-        _dict = Dict({'a': 'apple', 'b': 'banana'})
-        string = "dict_items([('a', 'apple'), ('b', 'banana')])"
-        self.assertEqual(str(_dict.items()), string)
+    def test_values(self):
+        _dict = Dict({'Key1': 1, 'Key2': 2})
+        self.assertEqual(list(_dict.values()), list([1, 2]))
 
 
 if __name__ == '__main__':

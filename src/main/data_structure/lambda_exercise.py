@@ -12,9 +12,10 @@ def find_square_of_value():
     logger.info('Square of the given value: {}'.format(square_value))
 
     return square_value
-    
 
-# map take all elemnets in list and pass it to function. And return values for all element. whether it is bool/other_type
+
+# map take all elemnets in list and pass it to function.
+# And return values for all element. whether it is bool/other_type
 def multiply_by_two(list_of_number):
     multiply = list(map(lambda x : x * 2, list_of_number))
     logger.info('Multiply given number by two: {}'.format(multiply))

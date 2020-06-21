@@ -131,4 +131,4 @@ dmypy.json
 .pyre/
 
 # my bin directory and files (Shakil)
-mybin/
+mybin/*

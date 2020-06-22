@@ -26,12 +26,6 @@ class TestList(unittest.TestCase):
     def test_sort_list_bubble_dsc(self):
         self.assertEqual(sort_list_bubble_dsc([10, 9, 8, 7, 5, 1, 2, 4, 3, 6]), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
 
-    def test_slicing_list(self):
-        self.assertEqual(list_slicing([1, 2, 3, 4, 5, 6]), [4, 5, 6])
-
-    def test_replace(self):
-        self.assertEqual(list_element_replacement([1, 3, 3]), [1, 2, 3])
-
     def test_binary_search(self):
         self.assertEqual(binary_search([1, 5, 15, 35, 100, 305, 390], 100), "Yes")
         self.assertEqual(binary_search([1, 5, 15, 35, 100, 305, 390], 1000), "No")

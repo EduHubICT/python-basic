@@ -2,6 +2,7 @@ import unittest
 
 from src.main.data_structure.lambda_exercise import *
 
+
 class TestLambda(unittest.TestCase):
     
     def test_find_square_of_value(self):
@@ -17,7 +18,7 @@ class TestLambda(unittest.TestCase):
     def test_add_two_value(self):
         closure = add_two_value(2)
         self.assertEqual(closure(4), 6)
-        
+
+
 if __name__ == '__main__':
     unittest.main()
-        

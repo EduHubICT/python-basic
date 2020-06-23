@@ -18,6 +18,7 @@ class TestLambda(unittest.TestCase):
     def test_add_two_value(self):
         closure = add_two_value(2)
         self.assertEqual(closure(4), 6)
+
     
     def test_high_order_function(self):
         self.assertEqual(high_order_function(2, lambda x : x * x), 6)

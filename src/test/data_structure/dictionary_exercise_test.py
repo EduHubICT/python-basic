@@ -28,6 +28,12 @@ class DictTest(unittest.TestCase):
         _dict = Dict({'Key1': 1, 'Key2': 2})
         self.assertEqual(list(_dict.values()), list([1, 2]))
 
+    def test_mapping_list_into_dictionary(self):
+        _dict = Dict({})
+        key_list = ['red', 'green', 'blue']
+        value_list = ['#FF0000', '#008000', '#0000FF']
+        self.assertEqual(_dict.mapping_list_into_dictionary(key_list, value_list), {'red': '#FF0000', 'green': '#008000', 'blue': '#0000FF'})
+
 
 if __name__ == '__main__':
     unittest.main()

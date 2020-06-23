@@ -37,3 +37,16 @@ def add_two_value(y):
     logger.info('Two value is add: {}'.format(second_value_add))
 
     return second_value_add
+
+
+high_order_function = lambda x, function : x + function(x)
+
+
+even_or_odd =  lambda x : (x % 2 and 'odd' or 'even')
+
+
+def sort_id_number(ids):
+    sort_number = sorted(ids, key=lambda x: int(x[2:]))
+    logger.info('Sorted id number : {}'.format(sort_number))
+    
+    return sort_number

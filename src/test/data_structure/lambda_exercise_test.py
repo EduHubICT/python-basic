@@ -19,6 +19,17 @@ class TestLambda(unittest.TestCase):
         closure = add_two_value(2)
         self.assertEqual(closure(4), 6)
 
-
+    
+    def test_high_order_function(self):
+        self.assertEqual(high_order_function(2, lambda x : x * x), 6)
+        
+    def test_odd_or_even(self):
+        self.assertEqual(even_or_odd(2), 'even')
+        
+    def test_sort_id_number(self):
+        self.assertEqual(sort_id_number(['id1', 'id2', 'id30', 'id3', 'id22', 'id100']),\
+                         ['id1', 'id2', 'id3', 'id22', 'id30', 'id100'])
+        
+        
 if __name__ == '__main__':
     unittest.main()

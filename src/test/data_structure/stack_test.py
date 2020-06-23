@@ -16,7 +16,7 @@ class TestStack(unittest.TestCase):
 
     def test_push(self):
         stack = Stack()
-    #    stack.pop()  #  used to check exception
+        #    stack.pop()  #  used to check exception
         stack.push(9)
         stack.push(5)
         self.assertEqual(stack.size(), 2)
@@ -31,11 +31,16 @@ class TestStack(unittest.TestCase):
         self.assertEqual(stack.empty(), False)
         stack.pop()
         self.assertEqual(stack.empty(), True)
+
     #    stack.top()  # used to check exception
 
     def test_display(self):
         stack = Stack([1, 9, 2])
         self.assertEqual(stack.display(), [1, 9, 2])
+
+    def test_find(self):
+        primary = [10, 4, 6, 3, 5]
+        self.assertEqual(Stack.find(primary), [5, 6, 10])
 
 
 if __name__ == '__main__':

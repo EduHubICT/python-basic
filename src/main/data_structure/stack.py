@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class Stack:
 
     # Constructor to initiate stack
@@ -5,6 +8,8 @@ class Stack:
         if stack is None:
             stack = []
         self.stack = stack
+        self.q1 = deque()
+        self.q2 = deque()
 
     # this returns the top item of stack
     def top(self):
@@ -39,3 +44,22 @@ class Stack:
     # to see elements of stack
     def display(self):
         return self.stack
+
+    # Function to find all elements which are greater than all elements present to its right
+    def find(self):
+        stack = deque()
+        find_greater = []
+
+        for i in range(len(self)):
+
+            # pop all the elements that are less than the current element
+            while stack and stack[-1] < self[i]:
+                stack.pop()
+
+            # push current element into the stack
+            stack.append(self[i])
+
+        while stack:
+            find_greater.append(stack.pop())
+
+        return find_greater

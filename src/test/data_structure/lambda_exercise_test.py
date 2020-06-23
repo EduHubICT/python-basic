@@ -2,6 +2,7 @@ import unittest
 
 from src.main.data_structure.lambda_exercise import *
 
+
 class TestLambda(unittest.TestCase):
     
     def test_find_square_of_value(self):
@@ -17,6 +18,7 @@ class TestLambda(unittest.TestCase):
     def test_add_two_value(self):
         closure = add_two_value(2)
         self.assertEqual(closure(4), 6)
+
     
     def test_high_order_function(self):
         self.assertEqual(high_order_function(2, lambda x : x * x), 6)
@@ -28,6 +30,6 @@ class TestLambda(unittest.TestCase):
         self.assertEqual(sort_id_number(['id1', 'id2', 'id30', 'id3', 'id22', 'id100']),\
                          ['id1', 'id2', 'id3', 'id22', 'id30', 'id100'])
         
+        
 if __name__ == '__main__':
     unittest.main()
-        

@@ -8,15 +8,16 @@ logger = PyLogger.get_configured_logger()
 
 # closure is used.
 def find_square_of_value():
-    square_value = lambda x : x * x
+    square_value = lambda x: x * x
     logger.info('Square of the given value: {}'.format(square_value))
 
     return square_value
-    
 
-# map take all elemnets in list and pass it to function. And return values for all element. whether it is bool/other_type
+
+# map take all elemnets in list and pass it to function.
+# And return values for all element. whether it is bool/other_type
 def multiply_by_two(list_of_number):
-    multiply = list(map(lambda x : x * 2, list_of_number))
+    multiply = list(map(lambda x: x * 2, list_of_number))
     logger.info('Multiply given number by two: {}'.format(multiply))
     
     return multiply
@@ -32,7 +33,7 @@ def find_even_numbers(list_of_number):
 
 #closure is used
 def add_two_value(y):
-    second_value_add = lambda x : x + y
+    second_value_add = lambda x: x + y
     logger.info('Two value is add: {}'.format(second_value_add))
 
     return second_value_add

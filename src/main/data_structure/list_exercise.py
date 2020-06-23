@@ -21,24 +21,6 @@ def list_sort(list_of_number):
     return sorted_list
 
 
-def slice_list(list1):
-    list_len = len(list1)
-    list = []
-    i = 0
-    for index in range(list_len):
-        if index > 2:
-            lst.append(list1[index])
-            i += 1
-    return lst
-
-
-def list_element_replacement(list1):
-    for index in range(len(list1)):
-        if index == 1:
-            list1[index] = 2
-    return list1
-
-
 def find_max(list_of_number):
     max_val = -1000000
     for number in list_of_number:

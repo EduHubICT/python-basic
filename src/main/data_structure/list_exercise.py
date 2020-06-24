@@ -13,30 +13,11 @@ def find_average(list_of_number):
     return summation / len(list_of_number)
 
 
-def sort_list(list_of_number):
-    
+def list_sort(list_of_number):
     sorted_list = sorted(list_of_number)
     logger.info("Sorted list : {}".format(sorted_list))
-    
+
     return sorted_list
-
-
-def slicing(list1):
-    lst_len = len(list1)
-    lst = []
-    i = 0
-    for index in range(lst_len):
-        if index > 2:
-            lst.append(list1[index])
-            i += 1
-    return lst
-
-
-def rep(list1):
-    for index in range(len(list1)):
-        if index == 1:
-            list1[index] = 2
-    return list1
 
 
 def find_max(list_of_number):
@@ -92,7 +73,8 @@ def binary_search(list_of_number, value):
     right = list_length - 1
 
     while left <= right:
-        middle = (left + right) // 2
+        middle = (left+right) // 2
+
         if value == list_of_number[middle]:
             return "Yes"
         elif value < list_of_number[middle]:
@@ -107,7 +89,6 @@ def binary_search_recursive(list_of_numbers, target, start, end):
     if start > end:
         return 'NO'
     mid = start + (end - start) // 2
-
     if list_of_numbers[mid] == target:
         return 'Yes'
     elif list_of_numbers[mid] > target:
@@ -115,11 +96,12 @@ def binary_search_recursive(list_of_numbers, target, start, end):
     elif list_of_numbers[mid] < target:
         return binary_search_recursive(list_of_numbers, target, mid + 1, end)
 
-
+      
 def binary_search_target_index(list_of_number, value, first_index):
     start = 0
     end = len(list_of_number) - 1
     target_index = -1
+
 
     while start <= end:
         mid = start + (end - start) // 2
@@ -130,6 +112,7 @@ def binary_search_target_index(list_of_number, value, first_index):
             # looking for the first indexed 2 or last indexed 2 in the list
             if first_index:
                 end = mid - 1
+
             else:
                 start = mid + 1
         elif list_of_number[mid] > value:
@@ -137,15 +120,13 @@ def binary_search_target_index(list_of_number, value, first_index):
         else:
             start = mid + 1
     return target_index
-
-
+  
 def binary_search_count(list_of_number, value):
     first_index = binary_search_target_index(list_of_number, value, True)
 
     if first_index != -1:
         last_index = binary_search_target_index(list_of_number, value, False)
         count = last_index - first_index + 1
-
     return count
 
 
@@ -155,11 +136,13 @@ def binary_search_circular_sorted(list_of_numbers, value):
     start = 0
     end = len(list_of_numbers) - 1
 
+
     while start <= end:
         mid = start + (end - start) // 2
 
         if list_of_numbers[mid] == value:
             return 'Yes'
+
 
         elif list_of_numbers[mid] <= list_of_numbers[end]:
             if list_of_numbers[mid] < value <= list_of_numbers[end]:
@@ -173,7 +156,7 @@ def binary_search_circular_sorted(list_of_numbers, value):
             else:
                 start = mid + 1
     return -1
-
+  
 
 def find_square(list_of_numbers):
     list_of_numbers_square = []
@@ -229,3 +212,4 @@ def list_comprehension(number):
     n = number
     value = [(x, y, z) for x in range(1, n) for y in range(x + 1, n) for z in range(y + 1, n) if x * y * z % 2 == 1]
     return value
+

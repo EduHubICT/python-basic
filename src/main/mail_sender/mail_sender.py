@@ -27,4 +27,5 @@ class MailSender:
         msg = f'Subject: {subject}\n\n{body}'
         server.sendmail(self.__from, _to, msg)
         server.close()
-        logger.info('You mail has been sent successfully')
+        logger.info('You mail has been sent successfully to {}'.format(_to))
+        return True

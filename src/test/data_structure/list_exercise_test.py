@@ -59,7 +59,10 @@ class TestList(unittest.TestCase):
     def test_list_comprehension(self):
         self.assertEqual(list_comprehension(10), [(1, 3, 5), (1, 3, 7), (1, 3, 9), (1, 5, 7), (1, 5, 9), (1, 7, 9), (3, 5, 7), (3, 5, 9), (3, 7, 9), (5, 7, 9)])
 
-
+    def test_find(self):
+        primary = [10, 4, 6, 3, 5]
+        self.assertEqual(Stack.find(primary), [5, 6, 10])
+        
 
 if __name__ == '__main__':
     unittest.main()

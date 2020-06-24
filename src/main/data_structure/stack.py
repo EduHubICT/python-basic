@@ -45,21 +45,4 @@ class Stack:
     def display(self):
         return self.stack
 
-    # Function to find all elements which are greater than all elements present to its right
-    def find(self):
-        stack = deque()
-        find_greater = []
 
-        for i in range(len(self)):
-
-            # pop all the elements that are less than the current element
-            while stack and stack[-1] < self[i]:
-                stack.pop()
-
-            # push current element into the stack
-            stack.append(self[i])
-
-        while stack:
-            find_greater.append(stack.pop())
-
-        return find_greater

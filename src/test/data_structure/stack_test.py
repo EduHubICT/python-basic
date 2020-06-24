@@ -38,10 +38,6 @@ class TestStack(unittest.TestCase):
         stack = Stack([1, 9, 2])
         self.assertEqual(stack.display(), [1, 9, 2])
 
-    def test_find(self):
-        primary = [10, 4, 6, 3, 5]
-        self.assertEqual(Stack.find(primary), [5, 6, 10])
-
 
 if __name__ == '__main__':
     unittest.main()

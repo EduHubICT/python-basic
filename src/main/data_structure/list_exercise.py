@@ -1,5 +1,5 @@
 from src.main.logger.py_logger import PyLogger
-
+from collections import deque
 logger = PyLogger.get_configured_logger()
 
 
@@ -14,10 +14,10 @@ def find_average(list_of_number):
 
 
 def sort_list(list_of_number):
-    
+
     sorted_list = sorted(list_of_number)
     logger.info("Sorted list : {}".format(sorted_list))
-    
+
     return sorted_list
 
 
@@ -222,6 +222,28 @@ def insertion_sort_dsc(list_of_number):
             ind = ind - 1
         list_of_number[ind + 1] = adjacent_item
     return list_of_number
+
+
+class Stack:
+
+    # Function to find all elements which are greater than all elements present to its right
+    def find(self):
+        stack = deque()
+        find_greater = []
+
+        for i in range(len(self)):
+
+            # pop all the elements that are less than the current element
+            while stack and stack[-1] < self[i]:
+                stack.pop()
+
+            # push current element into the stack
+            stack.append(self[i])
+
+        while stack:
+            find_greater.append(stack.pop())
+
+        return find_greater
 
 
 # Nested Loops in List Comprehension

@@ -29,6 +29,14 @@ class TestTuple(unittest.TestCase):
         tup = Tuple(('a', 'b', 'c'))
         self.assertEqual(tup.tuple_element_repetition(2), ('a', 'b', 'c', 'a', 'b', 'c'))
 
+    def test_tuple_to_string(self):
+        tup = Tuple(('e', 'x', 'e', 'r', 'c', 'i', 's', 'e', 's'))
+        self.assertEqual(tup.tuple_to_string(), 'exercises')
+
+    def test_sort_tuple_by_float_element(self):
+        tup = Tuple((('item1', '12.20'), ('item2', '15.10'), ('item3', '24.5')))
+        self.assertEqual(tup.sort_tuple_by_float_element(), (('item3', '24.5'), ('item2', '15.10'), ('item1', '12.20')))
+
 
 if __name__ == '__main__':
     unittest.main()

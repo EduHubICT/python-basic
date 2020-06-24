@@ -7,6 +7,9 @@ the tuples cannot be changed unlike lists and tuples use parentheses,
 whereas lists use square brackets.
 (https://www.tutorialspoint.com/python_data_structure/python_tuples_data_structure.htm)
 """
+from src.main.logger.py_logger import PyLogger
+
+logger = PyLogger.get_configured_logger()
 
 
 class Tuple:
@@ -45,3 +48,13 @@ class Tuple:
     # repetition of tuple x times
     def tuple_element_repetition(self, times):
         return self.tuple * times
+
+    # tuple into string
+    def tuple_to_string(self):
+        _str = ''.join(self.tuple)
+        logger.info(_str)
+        return _str
+
+    # sort a tuple by its float element.
+    def sort_tuple_by_float_element(self):
+        return tuple(sorted(self.tuple, key=lambda x: float(x[1]), reverse=True))

@@ -27,17 +27,23 @@ class TestList(unittest.TestCase):
     def test_sort_list_bubble_dsc(self):
         self.assertEqual(sort_list_bubble_dsc([10, 9, 8, 7, 5, 1, 2, 4, 3, 6]), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
 
-    def test_slicing_list(self):
-        self.assertEqual(slicing([1, 2, 3, 4, 5, 6]), [4, 5, 6])
-
-    def test_replace(self):
-        self.assertEqual(rep([1, 3, 3]), [1, 2, 3])
-
     def test_binary_search(self):
         self.assertEqual(binary_search([1, 5, 15, 35, 100, 305, 390], 100), "Yes")
         self.assertEqual(binary_search([1, 5, 15, 35, 100, 305, 390], 1000), "No")
         self.assertEqual(binary_search([1, 5, 15, 35, 100, 305, 390], 390), "Yes")
         self.assertEqual(binary_search([1, 5], 100), "No")
+
+    def test_recursive_binary_search(self):
+        self.assertEqual(binary_search_recursive([1, 2, 3, 4, 5, 6, 7, 8], 3, 0, 7), 'Yes')
+
+    def test_binary_search_index(self):
+        self.assertEqual(binary_search_target_index([1, 5, 15, 100, 100, 305, 390], 100, True), 3)
+
+    def test_binary_search_similar_target_count(self):
+        self.assertEqual(binary_search_count([1, 5, 15, 100, 100, 305, 390], 100), 2)
+
+    def test_binary_search_circular_sorted(self):
+        self.assertEqual(binary_search_circular_sorted([12, 13, 14, 1, 2, 3, 4], 14), 'Yes')
 
     def test_find_square(self):
         self.assertEqual(find_square([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), [1, 4, 9, 16, 25, 36, 49, 64, 81, 100])

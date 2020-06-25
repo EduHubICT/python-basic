@@ -1,5 +1,3 @@
-# python-basic
-
 ## Topics
 
 ## Problems

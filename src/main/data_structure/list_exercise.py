@@ -206,3 +206,62 @@ def insertion_sort_dsc(list_of_number):
             ind = ind - 1
         list_of_number[ind + 1] = adjacent_item
     return list_of_number
+
+
+# find specified type of item from a list of different type of items
+
+def specified_type_item(list_different_type, data_type):
+    count = 0
+    for item in list_different_type:
+        if type(item) == data_type:
+            count += 1
+    logger.info('Total count of {} type item : {}'.format(data_type, count))
+    return count
+
+
+def remove_duplicates(list_of_duplicates):
+    return list(set(list_of_duplicates))
+
+
+# Write a Python program to get a list, sorted in increasing order
+# by the last element in each tuple from a given list of non-empty tuples. 
+def sort_increasing_order(list_of_tuple):
+    return sorted(list_of_tuple,key = lambda x : x[1])
+
+
+#Write a Python program to generate a 3*4*6 3D array whose each element is *
+def three_dimensional_array(first,second,third):
+    array_3d = [[[1 for item in range(third)] for item in range(second)] for item in range(first)]
+    return array_3d
+
+
+# Shuffle and print a specified list
+from random import *
+def shuffled_list(list_of_numbers):
+    random.seed(0)
+    shuffle(list_of_numbers)
+    return list_of_numbers
+
+
+# Write a Python program to convert a list of characters into a string.
+def  list_to_string(list_of_characters):
+    after_join = ''.join(list_of_characters)
+    return after_join
+
+
+# Find the index of an item in a specified list
+def index_of_item(list_of_numbers, number):
+    return list_of_numbers.index(number)
+
+
+# Write a Python program to flatten a shallow list. 
+import itertools
+def flatten_list(list_2d):
+    return list(itertools.chain(*list_2d))
+
+
+# Select an item randomly from a list
+import random
+random.seed(0)
+def random_choice(list_of_number):
+    return random.choice(list_of_number)

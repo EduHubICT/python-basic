@@ -60,6 +60,39 @@ class TestList(unittest.TestCase):
         self.assertEqual(insertion_sort_dsc([1, 2, 3, 4, 5]), [5, 4, 3, 2, 1])
         self.assertEqual(insertion_sort_dsc([5, 10, 3, 22, 23, 24, 25]), [25, 24, 23, 22, 10, 5, 3])
         self.assertEqual(insertion_sort_dsc([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
+        
+    def test_specified_type_item(self):
+        self.assertEqual(specified_type_item([1,2,'abc',2.2], int), 2)
+        
+    def test_remove_duplicates(self):
+        self.assertEqual(remove_duplicates([1, 2, 2, 3, 3, 4, 4]), [1, 2, 3, 4])
+        
+    def test_sort_increasing_order(self):
+        self.assertEqual(sort_increasing_order([(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]),\
+                         [(2, 1), (1, 2), (2, 3), (4, 4), (2, 5)])
+        
+    def test_three_dimensional_array(self):
+        self.assertEqual(three_dimensional_array(3,4,6), [[[1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1],\
+                                                           [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]],\
+                                                          [[1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1],\
+                                                           [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]],\
+                                                          [[1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1],\
+                                                           [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]]] )
+        
+    def test_shuffled_list(self):
+        self.assertEqual(shuffled_list([1, 2, 3, 4, 5, 6]), [5, 3, 2, 1, 6, 4])
+        
+    def test_list_to_string(self):
+        self.assertEqual(list_to_string(['p', 'y', 't']), 'pyt')
+        
+    def test_index_of_item(self):
+        self.assertEqual(index_of_item([1, 2, 3, 4, 5, 6], 3), 2)
+        
+    def test_flatten_list(self):
+        self.assertEqual(flatten_list([[1, 2, 3], [4, 5, 6]]), [1, 2, 3, 4, 5, 6])
+        
+    def test_random_choice(self):
+        self.assertEqual(random_choice([1, 2, 3, 4, 5]), 4)
 
 
 if __name__ == '__main__':

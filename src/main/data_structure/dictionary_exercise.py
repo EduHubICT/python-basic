@@ -50,3 +50,42 @@ class Dict:
     def values(self):
         return self.dict.values()
 
+<<<<<<< Updated upstream
+=======
+    def mapping_list_into_dictionary(self, key_list, value_list):
+        self.dict = dict(zip(key_list, value_list))
+        logger.info(self.dict)
+        return self.dict
+
+    # find the max value in a dictionary
+    def find_max_value(self):
+        max_key = max(self.dict, key=self.dict.get)
+        max_value = self.dict[max_key]
+        logger.info(max_value)
+        return max_value
+
+    # find the max value in a dictionary
+    def find_min_value(self):
+        min_key = min(self.dict, key=self.dict.get)
+        min_value = self.dict[min_key]
+        logger.info(min_value)
+        return min_value
+
+    # sort dictionary by key
+    def sort_dict_by_key(self):
+        _dict_items = self.dict.items()
+        sorted_items = dict(sorted(_dict_items))
+        return sorted_items
+
+    def tutorial_marks_average(self):
+        tutorial = [
+            {'id': 101, 'subject': 'C', 'First': 23, 'Second': 22},
+            {'id': 102, 'subject': 'Python', 'First': 23, 'Second': 24},
+            {'id': 103, 'subject': 'Java', 'First': 25, 'Second': 16}]
+        for marks in tutorial:
+            n1 = marks.pop('First')
+            n2 = marks.pop('Second')
+            marks['First + Second'] = (n1 + n2) / 2
+        return tutorial
+
+>>>>>>> Stashed changes

@@ -265,3 +265,94 @@ import random
 random.seed(0)
 def random_choice(list_of_number):
     return random.choice(list_of_number)
+
+
+#  Check whether two lists are circularly identical
+def lists_circularly_identical(list_1, list_2):
+    return (' '.join(map(str,list_1)) in ' '.join(map(str,list_2 * 2)))
+
+
+# Find the second smallest number in a list
+def second_smallest(list_of_numbers):
+    if len(list_of_numbers)<2:
+        return
+    elif (len(list_of_numbers) == 2 and list_of_numbers[0] == list_of_numbers[1]):
+        return
+    else:
+        unique_list = list(set(list_of_numbers))
+        unique_list.sort()
+        return unique_list[1]
+    
+    
+# Find the second largest number in a list
+def second_largest(list_of_numbers):
+    if len(list_of_numbers)<2:
+        return
+    elif (len(list_of_numbers) == 2 and list_of_numbers[0] == list_of_numbers[1]):
+        return
+    else:
+        unique_list = list(set(list_of_numbers))
+        unique_list.sort()
+        return unique_list[-2]
+    
+    
+# Count the number of elements in a list within a specified range
+def count_num_within_range(list_of_items, min, max):
+    list_of_items.sort()
+    for index, item in enumerate(list_of_items):
+        if item >= min:
+            return len(list_of_items) - index
+    return
+
+
+# Check whether a list contains a sublist
+def check_sublist(list_1, sub_list):
+    if sub_list == []:
+        return True
+    elif sub_list == list_1:
+        return True
+    elif len(sub_list) > len(list_1):
+        return False
+    else:
+        for index, item in enumerate(list_1):
+            if item == sub_list[0]:
+                if len(sub_list) <2:
+                    return True
+                elif (sub_list[1: len(sub_list)] == list_1[index+1 : index+len(sub_list)]):
+                      return True
+                else:
+                      return False
+
+
+# Write a Python program to generate all sublists of a list.
+from itertools import combinations
+def create_all_sublist(list_of_items):
+    sub_lists = []
+    for item in range (len(list_of_items) + 1):
+        temp = [list(sub) for sub in combinations(list_of_items, item)]
+        sub_lists.extend(temp)
+    return sub_lists
+
+
+# 
+def prime_eratosthenes(n):
+    prime_list = []
+    not_prime = []
+    for i in range(2, n + 1):
+        if i not in not_prime:
+            prime_list.append(i)
+            for j in range(i * i, n + 1, i):
+                not_prime.append(j)
+    return prime_list
+
+
+# Create a list by concatenating a given list which range goes from 1 to n
+def concatenate_list_ranges(list_of_items, _range):
+    new_list = ['{}{}'.format(x,y) for y in range(1, _range+1) for x in list_of_items]
+    return new_list
+
+random.seed(0)
+def get_variable_unique_id(value):
+    unique_id = format(id(value), 'x')
+    logger.info('variable unique id: {}'.format(unique_id))
+

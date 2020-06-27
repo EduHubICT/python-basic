@@ -1,57 +1,55 @@
+from src.main.data_structure.set_exercise import *
 from src.main.web_scrapping.scrapper import *
-from src.main.logger.py_logger import *
+import time
 
 headers = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) snap Chromium/83.0.4103.106 Chrome/83.0.4103.106 Safari/537.36"
-logger = PyLogger.get_configured_logger()
+training_keywords = ['করোনা', 'কোভিড-১৯', 'উহান-ভাইরাস']  # add keywords here
 
 
 def find_date_time(string):
-
-    # for somoynews tv
-    items = string.find_all('div', {'class': 'news-info'})
-    if len(items) > 0:
-        for i in items:
-            item = scrap_content(i.get_text().strip())
-            date = item.find_all('p')
-            return str(date[0].get_text().strip().split())
-
-    # for banglanews24.com
-    items = string.find_all('p', {'class': 'dateline print-only'})
-    if len(items) > 0:
-        for i in items:
-            item = scrap_content(i.get_text().strip())
-            date = item.find_all('p')
-            return str(date[0].get_text().strip().split())
-
-    # for jamunanews.tv
     items = string.find_all('time')
     if len(items) > 0:
         for i in items:
             return i.get_text().strip()
 
-    return "sorry, no date found."
 
-
-def print_only_corona_news(all_link):
+def print_only_corona_news(links):
     news_count = 0
 
-    for link in all_link:
+    for link in links:
+        news_link = get_valid_link(str(link.get('href')))
         title = link.get_text().strip()
-        news_link = link.get('href')
-        if title.find('করোনা') != -1:
+
+        if news_link is None or title is None:
+            continue
+
+        title_words = title.split()
+
+        if find_intersection(set(training_keywords), set(title_words)):
             date = find_date_time(scrap_url(news_link, headers))
             logger.info('Published: {}, Heading: {}, Link: {}'.format(date, title, news_link))
             news_count += 1
+        else:
+            metadata = scrap_url(news_link, headers).find_all('meta')
+            for tag in metadata:
+                if 'name' in tag.attrs.keys() and tag.attrs['name'].strip().lower() in ['keywords', 'description']:
+                    sample_keywords = tag.attrs['content'].strip().split()
+
+                    if find_intersection(set(training_keywords), set(sample_keywords)):
+                        news_count += 1
+                        date = find_date_time(scrap_url(news_link, headers))
+                        logger.info('Published: {}, Heading: {}, Link: {}'.format(date, title, news_link))
 
     return news_count
 
 
 if __name__ == '__main__':
+    begin_time = time.time()
     total_news = 0
-    url_list = ["https://somoynews.tv", "https://bangla.bdnews24.com"]
-    for url in url_list:
-        soup = scrap_url(url, headers)
-        links = soup.find_all('a')
-        total_news += print_only_corona_news(links)
+    website_list = ["https://jamuna.tv", "https://bangla.bdnews24.com", "https://somoynews.tv", "https://prothomalo.com"]  # add target website URL here
+    for web_url in website_list:
+        soup = scrap_url(web_url, headers)
+        all_links = soup.find_all('a')
+        total_news += print_only_corona_news(all_links)
 
-    logger.info("Total {} news found.".format(total_news))
+    logger.info("Total {} news found within {} seconds.".format(total_news, time.time()-begin_time))

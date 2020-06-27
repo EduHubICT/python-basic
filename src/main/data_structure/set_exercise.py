@@ -64,7 +64,7 @@ def find_intersection(set_a, set_b) -> set:
     return new_set
 
 
-# return True of self.set is disjoint with set_b
+# return True if set_a is disjoint with set_b
 def find_disjoint(set_a, set_b) -> bool:
     for item in set_a:
         if item in set_b:

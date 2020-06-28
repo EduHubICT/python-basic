@@ -6,6 +6,7 @@
   the items are separated by commas,
   and the whole thing is enclosed in curly braces.
 """
+from typing import Dict, Any
 
 from src.main.logger.py_logger import PyLogger
 
@@ -50,8 +51,6 @@ class Dict:
     def values(self):
         return self.dict.values()
 
-<<<<<<< Updated upstream
-=======
     def mapping_list_into_dictionary(self, key_list, value_list):
         self.dict = dict(zip(key_list, value_list))
         logger.info(self.dict)
@@ -87,5 +86,3 @@ class Dict:
             n2 = marks.pop('Second')
             marks['First + Second'] = (n1 + n2) / 2
         return tutorial
-
->>>>>>> Stashed changes

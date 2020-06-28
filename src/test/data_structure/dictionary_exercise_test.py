@@ -28,8 +28,6 @@ class DictTest(unittest.TestCase):
         _dict = Dict({'Key1': 1, 'Key2': 2})
         self.assertEqual(list(_dict.values()), list([1, 2]))
 
-<<<<<<< Updated upstream
-=======
     def test_mapping_list_into_dictionary(self):
         _dict = Dict({})
         key_list = ['red', 'green', 'blue']
@@ -53,7 +51,6 @@ class DictTest(unittest.TestCase):
         self.assertEqual(_dict.tutorial_marks_average(), [
             {'id': 101, 'subject': 'C', 'First + Second': 22.5}, {'id': 102, 'subject': 'Python', 'First + Second': 23.5}, {'id': 103, 'subject': 'Java', 'First + Second': 20.5}])
 
->>>>>>> Stashed changes
 
 if __name__ == '__main__':
     unittest.main()

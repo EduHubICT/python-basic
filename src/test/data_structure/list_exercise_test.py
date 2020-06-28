@@ -4,12 +4,13 @@ from src.main.data_structure.list_exercise import *
 
 
 class TestList(unittest.TestCase):
+
     def test_find_average(self):
         self.assertEqual(find_average([1, 2, 3]), 2)
         self.assertEqual(find_average([1, 2, 3, 4, 5, 6, 7, -1]), 3.375)
 
     def test_sort_list(self):
-        self.assertEqual(list_sort([3, 5, 1, 9]), [1, 3, 5, 9])
+        self.assertEqual(sort_list([3, 5, 1, 9]), [1, 3, 5, 9])
 
     def test_find_max(self):
         self.assertEqual(find_max([0, 3, 2, 4, 5, 6, 100]), 100)
@@ -21,7 +22,7 @@ class TestList(unittest.TestCase):
         self.assertEqual(find_sum([1, 2, 3, 4]), 10)
 
     def test_sort_list_bubble(self):
-        self.assertEqual(sort_list_bubble_asc([10, 9, 8, 7, 5, 1, 2, 4,3, 6]), [1, 2, 3, 4, 5, 6,7, 8, 9, 10])
+        self.assertEqual(sort_list_bubble_asc([10, 9, 8, 7, 5, 1, 2, 4, 3, 6]), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
     def test_sort_list_bubble_dsc(self):
         self.assertEqual(sort_list_bubble_dsc([10, 9, 8, 7, 5, 1, 2, 4, 3, 6]), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
@@ -61,6 +62,13 @@ class TestList(unittest.TestCase):
         self.assertEqual(insertion_sort_dsc([5, 10, 3, 22, 23, 24, 25]), [25, 24, 23, 22, 10, 5, 3])
         self.assertEqual(insertion_sort_dsc([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
 
+    def test_list_comprehension(self):
+        self.assertEqual(list_comprehension(10), [(1, 3, 5), (1, 3, 7), (1, 3, 9), (1, 5, 7), (1, 5, 9), (1, 7, 9), (3, 5, 7), (3, 5, 9), (3, 7, 9), (5, 7, 9)])
+
+    def test_find(self):
+        primary = [10, 4, 6, 3, 5]
+        self.assertEqual(Stack.find(primary), [5, 6, 10])
+        
 
 if __name__ == '__main__':
     unittest.main()

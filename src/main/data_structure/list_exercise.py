@@ -1,6 +1,5 @@
 from src.main.logger.py_logger import PyLogger
 
-
 logger = PyLogger.get_configured_logger()
 
 
@@ -19,6 +18,24 @@ def list_sort(list_of_number):
     logger.info("Sorted list : {}".format(sorted_list))
 
     return sorted_list
+
+
+def slicing(list1):
+    lst_len = len(list1)
+    lst = []
+    i = 0
+    for index in range(lst_len):
+        if index > 2:
+            lst.append(list1[index])
+            i += 1
+    return lst
+
+
+def rep(list1):
+    for index in range(len(list1)):
+        if index == 1:
+            list1[index] = 2
+    return list1
 
 
 def find_max(list_of_number):
@@ -75,6 +92,7 @@ def binary_search(list_of_number, value):
 
     while left <= right:
         middle = (left+right) // 2
+
         if value == list_of_number[middle]:
             return "Yes"
         elif value < list_of_number[middle]:
@@ -89,21 +107,20 @@ def binary_search_recursive(list_of_numbers, target, start, end):
     if start > end:
         return 'NO'
     mid = start + (end - start) // 2
-    
     if list_of_numbers[mid] == target:
         return 'Yes'
     elif list_of_numbers[mid] > target:
         return binary_search_recursive(list_of_numbers, target, start, mid - 1)
     elif list_of_numbers[mid] < target:
         return binary_search_recursive(list_of_numbers, target, mid + 1, end)
-    
-    
-def binary_search_target_index(list_of_number, value, first_index):
 
+      
+def binary_search_target_index(list_of_number, value, first_index):
     start = 0
     end = len(list_of_number) - 1
     target_index = -1
-    
+
+
     while start <= end:
         mid = start + (end - start) // 2
         if list_of_number[mid] == value:
@@ -112,7 +129,8 @@ def binary_search_target_index(list_of_number, value, first_index):
             # sorted list .[0,1,2,2,2,3,4,5] our target value = 2 and we
             # looking for the first indexed 2 or last indexed 2 in the list
             if first_index:
-                end = mid - 1 
+                end = mid - 1
+
             else:
                 start = mid + 1
         elif list_of_number[mid] > value:
@@ -121,15 +139,12 @@ def binary_search_target_index(list_of_number, value, first_index):
             start = mid + 1
     return target_index
   
-
 def binary_search_count(list_of_number, value):
-    
     first_index = binary_search_target_index(list_of_number, value, True)
-    
+
     if first_index != -1:
         last_index = binary_search_target_index(list_of_number, value, False)
         count = last_index - first_index + 1
-        
     return count
 
 
@@ -138,26 +153,28 @@ def binary_search_count(list_of_number, value):
 def binary_search_circular_sorted(list_of_numbers, value):
     start = 0
     end = len(list_of_numbers) - 1
-    
+
+
     while start <= end:
-        mid = start + (end-start) // 2 
-        
+        mid = start + (end - start) // 2
+
         if list_of_numbers[mid] == value:
             return 'Yes'
-        
+
+
         elif list_of_numbers[mid] <= list_of_numbers[end]:
             if list_of_numbers[mid] < value <= list_of_numbers[end]:
                 start = mid + 1
             else:
                 end = mid - 1
-        
+
         elif list_of_numbers[start] <= list_of_numbers[mid]:
             if list_of_numbers[start] <= value < list_of_numbers[mid]:
                 end = mid - 1
             else:
                 start = mid + 1
-    return -1        
-
+    return -1
+  
 
 def find_square(list_of_numbers):
     list_of_numbers_square = []
@@ -185,7 +202,7 @@ def find_prime_number(list_of_numbers):
 
     return is_prime_list
 
-  
+
 def insertion_sort_asc(list_of_number):
     for item in range(1, len(list_of_number)):
         ind = item - 1
@@ -193,7 +210,7 @@ def insertion_sort_asc(list_of_number):
         while ind >= 0 and list_of_number[ind] > adjacent_item:
             list_of_number[ind + 1] = list_of_number[ind]
             ind = ind - 1
-        list_of_number[ind+1] = adjacent_item
+        list_of_number[ind + 1] = adjacent_item
     return list_of_number
 
 
@@ -206,3 +223,33 @@ def insertion_sort_dsc(list_of_number):
             ind = ind - 1
         list_of_number[ind + 1] = adjacent_item
     return list_of_number
+
+
+class Stack:
+
+    # Function to find all elements which are greater than all elements present to its right
+    def find(self):
+        stack = deque()
+        find_greater = []
+
+        for i in range(len(self)):
+
+            # pop all the elements that are less than the current element
+            while stack and stack[-1] < self[i]:
+                stack.pop()
+
+            # push current element into the stack
+            stack.append(self[i])
+
+        while stack:
+            find_greater.append(stack.pop())
+
+        return find_greater
+
+
+# Nested Loops in List Comprehension
+def list_comprehension(number):
+    n = number
+    value = [(x, y, z) for x in range(1, n) for y in range(x + 1, n) for z in range(y + 1, n) if x * y * z % 2 == 1]
+    return value
+

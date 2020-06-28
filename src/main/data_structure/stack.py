@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class Stack:
 
     # Constructor to initiate stack
@@ -5,6 +8,8 @@ class Stack:
         if stack is None:
             stack = []
         self.stack = stack
+        self.q1 = deque()
+        self.q2 = deque()
 
     # this returns the top item of stack
     def top(self):
@@ -39,3 +44,5 @@ class Stack:
     # to see elements of stack
     def display(self):
         return self.stack
+
+

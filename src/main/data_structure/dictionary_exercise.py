@@ -75,3 +75,14 @@ class Dict:
         _dict_items = self.dict.items()
         sorted_items = dict(sorted(_dict_items))
         return sorted_items
+
+    def tutorial_marks_average(self):
+        tutorial = [
+            {'id': 101, 'subject': 'C', 'First': 23, 'Second': 22},
+            {'id': 102, 'subject': 'Python', 'First': 23, 'Second': 24},
+            {'id': 103, 'subject': 'Java', 'First': 25, 'Second': 16}]
+        for marks in tutorial:
+            n1 = marks.pop('First')
+            n2 = marks.pop('Second')
+            marks['First + Second'] = (n1 + n2) / 2
+        return tutorial

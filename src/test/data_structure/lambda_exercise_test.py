@@ -29,7 +29,6 @@ class TestLambda(unittest.TestCase):
     def test_sort_id_number(self):
         self.assertEqual(sort_id_number(['id1', 'id2', 'id30', 'id3', 'id22', 'id100']),\
                          ['id1', 'id2', 'id3', 'id22', 'id30', 'id100'])
-        
-        
+
 if __name__ == '__main__':
     unittest.main()

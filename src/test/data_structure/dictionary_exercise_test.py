@@ -46,6 +46,11 @@ class DictTest(unittest.TestCase):
         _dict = Dict({"b": 2, "f": 30, "d": 34, "c": 3, "a": 1})
         self.assertEqual(_dict.sort_dict_by_key(), {"a": 1, "b": 2, "c": 3, "d": 34, "f": 30})
 
+    def test_tutorial_marks_average(self):
+        _dict = Dict({})
+        self.assertEqual(_dict.tutorial_marks_average(), [
+            {'id': 101, 'subject': 'C', 'First + Second': 22.5}, {'id': 102, 'subject': 'Python', 'First + Second': 23.5}, {'id': 103, 'subject': 'Java', 'First + Second': 20.5}])
+
 
 if __name__ == '__main__':
     unittest.main()

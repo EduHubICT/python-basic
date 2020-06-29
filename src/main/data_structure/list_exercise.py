@@ -358,9 +358,6 @@ def concatenate_list_ranges(list_of_items, _range):
     return new_list
 
 
-random.seed(0)
-
-
 def get_variable_unique_id(value):
     unique_id = format(id(value), 'x')
     logger.info('variable unique id: {}'.format(unique_id))

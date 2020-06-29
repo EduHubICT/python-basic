@@ -45,8 +45,8 @@ def sort_tuples_list(list_of_tuples):
 """
 
 
-def sort_dict_list(list_of_dict):
-    list_of_dict.sort(key=lambda x: x['Age'])
+def sort_dict_list(list_of_dict, key):
+    list_of_dict.sort(key=lambda x: x[key])
     return list_of_dict
 
 

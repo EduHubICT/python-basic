@@ -19,7 +19,7 @@ class PythonLambdaTestCase(unittest.TestCase):
         self.assertEqual(my_output, expected_output)
 
     def test_solution_4(self):
-        my_output = sort_dict_list([{'Name': 'Rafi', 'Age': 17}, {'Name': 'Tania', 'Age': 9}, {'Name': 'Himu', 'Age': 12}, {'Name': 'Simi', 'Age': 7}])
+        my_output = sort_dict_list([{'Name': 'Rafi', 'Age': 17}, {'Name': 'Tania', 'Age': 9}, {'Name': 'Himu', 'Age': 12}, {'Name': 'Simi', 'Age': 7}], 'Age')
         expected_output = [{'Name': 'Simi', 'Age': 7}, {'Name': 'Tania', 'Age': 9}, {'Name': 'Himu', 'Age': 12}, {'Name': 'Rafi', 'Age': 17}]
         self.assertEqual(my_output, expected_output)
 

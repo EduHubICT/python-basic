@@ -12,6 +12,7 @@ logger = PyLogger.get_configured_logger()
 2. The nested function must refer to a value defined in the enclosing function.
 3. The enclosing function must return the nested function."""
 
+
 # closure is used.
 def find_square_of_value():
     square_value = lambda x: x * x

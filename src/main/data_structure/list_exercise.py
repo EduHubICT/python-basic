@@ -351,6 +351,7 @@ def concatenate_list_ranges(list_of_items, _range):
     new_list = ['{}{}'.format(x,y) for y in range(1, _range+1) for x in list_of_items]
     return new_list
 
+
 random.seed(0)
 def get_variable_unique_id(value):
     unique_id = format(id(value), 'x')

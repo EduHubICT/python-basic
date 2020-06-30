@@ -61,13 +61,16 @@ class TestList(unittest.TestCase):
         self.assertEqual(insertion_sort_dsc([1, 2, 3, 4, 5]), [5, 4, 3, 2, 1])
         self.assertEqual(insertion_sort_dsc([5, 10, 3, 22, 23, 24, 25]), [25, 24, 23, 22, 10, 5, 3])
         self.assertEqual(insertion_sort_dsc([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
-        
+
     def test_specified_type_item(self):
         self.assertEqual(specified_type_item([1,2,'abc',2.2], int), 2)
 
     def test_remove_duplicates(self):
         self.assertEqual(remove_duplicates([1, 2, 2, 3, 3, 4, 4]), [1, 2, 3, 4])
-        
+
+    def test_find(self):
+        primary = [10, 4, 6, 3, 5]
+        self.assertEqual(Stack.find(primary), [5, 6, 10])
 
 if __name__ == '__main__':
     unittest.main()

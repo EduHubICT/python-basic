@@ -1,3 +1,4 @@
+from collections import deque
 from src.main.logger.py_logger import PyLogger
 
 logger = PyLogger.get_configured_logger()
@@ -73,7 +74,7 @@ def binary_search(list_of_number, value):
     right = list_length - 1
 
     while left <= right:
-        middle = (left+right) // 2
+        middle = (left + right) // 2
 
         if value == list_of_number[middle]:
             return "Yes"
@@ -96,12 +97,11 @@ def binary_search_recursive(list_of_numbers, target, start, end):
     elif list_of_numbers[mid] < target:
         return binary_search_recursive(list_of_numbers, target, mid + 1, end)
 
-      
+
 def binary_search_target_index(list_of_number, value, first_index):
     start = 0
     end = len(list_of_number) - 1
     target_index = -1
-
 
     while start <= end:
         mid = start + (end - start) // 2
@@ -120,7 +120,7 @@ def binary_search_target_index(list_of_number, value, first_index):
         else:
             start = mid + 1
     return target_index
-  
+
 
 def binary_search_count(list_of_number, value):
     first_index = binary_search_target_index(list_of_number, value, True)
@@ -131,19 +131,17 @@ def binary_search_count(list_of_number, value):
     return count
 
 
-# CircularRotatedSorted arrary Example : [12,13,14,1,2,3,4] 
+# CircularRotatedSorted arrary Example : [12,13,14,1,2,3,4]
 # or [2,3,4,12,13,14,1]
 def binary_search_circular_sorted(list_of_numbers, value):
     start = 0
     end = len(list_of_numbers) - 1
-
 
     while start <= end:
         mid = start + (end - start) // 2
 
         if list_of_numbers[mid] == value:
             return 'Yes'
-
 
         elif list_of_numbers[mid] <= list_of_numbers[end]:
             if list_of_numbers[mid] < value <= list_of_numbers[end]:
@@ -157,7 +155,7 @@ def binary_search_circular_sorted(list_of_numbers, value):
             else:
                 start = mid + 1
     return -1
-  
+
 
 def find_square(list_of_numbers):
     list_of_numbers_square = []
@@ -221,8 +219,7 @@ def specified_type_item(list_different_type, data_type):
 
 def remove_duplicates(list_of_duplicates):
     return list(set(list_of_duplicates))
-    
-    
+
 class Stack:
 
     # Function to find all elements which are greater than all elements present to its right
@@ -243,6 +240,4 @@ class Stack:
             find_greater.append(stack.pop())
 
         return find_greater
-
-
 

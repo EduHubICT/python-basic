@@ -4,7 +4,7 @@ logger = PyLogger.get_configured_logger()
 
 
 # Count the number of characters (character appearance) in a string
-def char_appearance(string):
+def count_char_appearance(string):
     char_dict = {}
     for n in string:
         keys = char_dict.keys()
@@ -31,7 +31,7 @@ def add_string(string):
 # Find the first appearance of the substring 'not' and 'poor' from a given string,
 # if 'not' follows the 'poor', replace the whole 'not'...'poor' substring with 'good'.
 # Return the resulting string
-def string_replace(string):
+def replace_string(string):
     string_not = string.find('not')
     string_poor = string.find('poor')
 

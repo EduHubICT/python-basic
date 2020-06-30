@@ -4,9 +4,9 @@ from src.main.data_structure.string_exercise import *
 
 class TestList(unittest.TestCase):
     def test_char_appearance(self):
-        self.assertEqual(char_appearance('google.com'), {'o': 3, '.': 1, 'g': 2, 'l': 1, 'e': 1, 'c': 1, 'm': 1})
-        self.assertEqual(char_appearance('Dog'), {'D': 1, 'o': 1, 'g': 1})
-        self.assertEqual(char_appearance('potato'), {'p': 1, 'o': 2, 't': 2, 'a': 1})
+        self.assertEqual(count_char_appearance('google.com'), {'o': 3, '.': 1, 'g': 2, 'l': 1, 'e': 1, 'c': 1, 'm': 1})
+        self.assertEqual(count_char_appearance('Dog'), {'D': 1, 'o': 1, 'g': 1})
+        self.assertEqual(count_char_appearance('potato'), {'p': 1, 'o': 2, 't': 2, 'a': 1})
 
     def test_add_string(self):
         self.assertEqual(add_string('ab'), 'ab')
@@ -14,8 +14,8 @@ class TestList(unittest.TestCase):
         self.assertEqual(add_string('string'), 'stringly')
 
     def test_string_replace(self):
-        self.assertEqual(string_replace('The lyrics is not that poor!'), 'The lyrics is good!')
-        self.assertEqual(string_replace('The lyrics is poor!'), 'The lyrics is poor!')
+        self.assertEqual(replace_string('The lyrics is not that poor!'), 'The lyrics is good!')
+        self.assertEqual(replace_string('The lyrics is poor!'), 'The lyrics is poor!')
 
     def test_find_longest_word(self):
         self.assertEqual(find_longest_word(["PHP", "Exercises", "Backend"]), 'Exercises')

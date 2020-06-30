@@ -1,3 +1,4 @@
+from collections import deque
 from src.main.logger.py_logger import PyLogger
 
 logger = PyLogger.get_configured_logger()
@@ -73,7 +74,7 @@ def binary_search(list_of_number, value):
     right = list_length - 1
 
     while left <= right:
-        middle = (left+right) // 2
+        middle = (left + right) // 2
 
         if value == list_of_number[middle]:
             return "Yes"
@@ -96,12 +97,11 @@ def binary_search_recursive(list_of_numbers, target, start, end):
     elif list_of_numbers[mid] < target:
         return binary_search_recursive(list_of_numbers, target, mid + 1, end)
 
-      
+
 def binary_search_target_index(list_of_number, value, first_index):
     start = 0
     end = len(list_of_number) - 1
     target_index = -1
-
 
     while start <= end:
         mid = start + (end - start) // 2
@@ -120,8 +120,8 @@ def binary_search_target_index(list_of_number, value, first_index):
         else:
             start = mid + 1
     return target_index
-  
-  
+
+
 def binary_search_count(list_of_number, value):
     first_index = binary_search_target_index(list_of_number, value, True)
 
@@ -131,19 +131,17 @@ def binary_search_count(list_of_number, value):
     return count
 
 
-# CircularRotatedSorted arrary Example : [12,13,14,1,2,3,4] 
+# CircularRotatedSorted arrary Example : [12,13,14,1,2,3,4]
 # or [2,3,4,12,13,14,1]
 def binary_search_circular_sorted(list_of_numbers, value):
     start = 0
     end = len(list_of_numbers) - 1
-
 
     while start <= end:
         mid = start + (end - start) // 2
 
         if list_of_numbers[mid] == value:
             return 'Yes'
-
 
         elif list_of_numbers[mid] <= list_of_numbers[end]:
             if list_of_numbers[mid] < value <= list_of_numbers[end]:
@@ -157,7 +155,7 @@ def binary_search_circular_sorted(list_of_numbers, value):
             else:
                 start = mid + 1
     return -1
-  
+
 
 def find_square(list_of_numbers):
     list_of_numbers_square = []
@@ -224,19 +222,21 @@ def remove_duplicates(list_of_duplicates):
 
 
 # Write a Python program to get a list, sorted in increasing order
-# by the last element in each tuple from a given list of non-empty tuples. 
+# by the last element in each tuple from a given list of non-empty tuples.
 def sort_increasing_order(list_of_tuple):
-    return sorted(list_of_tuple,key = lambda x : x[1])
+    return sorted(list_of_tuple, key=lambda x: x[1])
 
 
-#Write a Python program to generate a 3*4*6 3D array whose each element is *
-def three_dimensional_array(first,second,third):
+# Write a Python program to generate a 3*4*6 3D array whose each element is *
+def three_dimensional_array(first, second, third):
     array_3d = [[[1 for item in range(third)] for item in range(second)] for item in range(first)]
     return array_3d
 
 
 # Shuffle and print a specified list
 from random import *
+
+
 def shuffled_list(list_of_numbers):
     random.seed(0)
     shuffle(list_of_numbers)
@@ -244,7 +244,7 @@ def shuffled_list(list_of_numbers):
 
 
 # Write a Python program to convert a list of characters into a string.
-def  list_to_string(list_of_characters):
+def list_to_string(list_of_characters):
     after_join = ''.join(list_of_characters)
     return after_join
 
@@ -254,48 +254,53 @@ def index_of_item(list_of_numbers, number):
     return list_of_numbers.index(number)
 
 
-# Write a Python program to flatten a shallow list. 
+# Write a Python program to flatten a shallow list.
 import itertools
+
+
 def flatten_list(list_2d):
     return list(itertools.chain(*list_2d))
 
 
 # Select an item randomly from a list
 import random
+
 random.seed(0)
+
+
 def random_choice(list_of_number):
     return random.choice(list_of_number)
 
 
 #  Check whether two lists are circularly identical
 def lists_circularly_identical(list_1, list_2):
-    return (' '.join(map(str,list_1)) in ' '.join(map(str,list_2 * 2)))
+    return ' '.join(map(str, list_1)) in ' '.join(map(str, list_2 * 2))
 
 
 # Find the second smallest number in a list
 def second_smallest(list_of_numbers):
-    if len(list_of_numbers)<2:
+    if len(list_of_numbers) < 2:
         return
-    elif (len(list_of_numbers) == 2 and list_of_numbers[0] == list_of_numbers[1]):
+    elif len(list_of_numbers) == 2 and list_of_numbers[0] == list_of_numbers[1]:
         return
     else:
         unique_list = list(set(list_of_numbers))
         unique_list.sort()
         return unique_list[1]
-    
-    
+
+
 # Find the second largest number in a list
 def second_largest(list_of_numbers):
-    if len(list_of_numbers)<2:
+    if len(list_of_numbers) < 2:
         return
-    elif (len(list_of_numbers) == 2 and list_of_numbers[0] == list_of_numbers[1]):
+    elif len(list_of_numbers) == 2 and list_of_numbers[0] == list_of_numbers[1]:
         return
     else:
         unique_list = list(set(list_of_numbers))
         unique_list.sort()
         return unique_list[-2]
-    
-    
+
+
 # Count the number of elements in a list within a specified range
 def count_num_within_range(list_of_items, min, max):
     list_of_items.sort()
@@ -307,7 +312,7 @@ def count_num_within_range(list_of_items, min, max):
 
 # Check whether a list contains a sublist
 def check_sublist(list_1, sub_list):
-    if sub_list == []:
+    if not sub_list:
         return True
     elif sub_list == list_1:
         return True
@@ -316,25 +321,26 @@ def check_sublist(list_1, sub_list):
     else:
         for index, item in enumerate(list_1):
             if item == sub_list[0]:
-                if len(sub_list) <2:
+                if len(sub_list) < 2:
                     return True
-                elif (sub_list[1: len(sub_list)] == list_1[index+1 : index+len(sub_list)]):
-                      return True
+                elif sub_list[1: len(sub_list)] == list_1[index + 1: index + len(sub_list)]:
+                    return True
                 else:
-                      return False
+                    return False
 
 
-# Write a Python program to generate all sublists of a list.
+# Write a Python program to generate all sub lists of a list.
 from itertools import combinations
+
+
 def create_all_sublist(list_of_items):
     sub_lists = []
-    for item in range (len(list_of_items) + 1):
+    for item in range(len(list_of_items) + 1):
         temp = [list(sub) for sub in combinations(list_of_items, item)]
         sub_lists.extend(temp)
     return sub_lists
 
 
-# 
 def prime_eratosthenes(n):
     prime_list = []
     not_prime = []
@@ -348,16 +354,15 @@ def prime_eratosthenes(n):
 
 # Create a list by concatenating a given list which range goes from 1 to n
 def concatenate_list_ranges(list_of_items, _range):
-    new_list = ['{}{}'.format(x,y) for y in range(1, _range+1) for x in list_of_items]
+    new_list = ['{}{}'.format(x, y) for y in range(1, _range + 1) for x in list_of_items]
     return new_list
 
-  
-random.seed(0)
+
 def get_variable_unique_id(value):
     unique_id = format(id(value), 'x')
     logger.info('variable unique id: {}'.format(unique_id))
-    
-    
+
+
 class Stack:
 
     # Function to find all elements which are greater than all elements present to its right
@@ -385,4 +390,3 @@ def list_comprehension(number):
     n = number
     value = [(x, y, z) for x in range(1, n) for y in range(x + 1, n) for z in range(y + 1, n) if x * y * z % 2 == 1]
     return value
-

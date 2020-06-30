@@ -37,6 +37,9 @@ class TestTuple(unittest.TestCase):
         tup = Tuple((('item1', '12.20'), ('item2', '15.10'), ('item3', '24.5')))
         self.assertEqual(tup.sort_tuple_by_float_element(), (('item3', '24.5'), ('item2', '15.10'), ('item1', '12.20')))
 
+    def test_average_tutorial_marks(self):
+        self.assertEqual(Tuple(()).average_tutorial_marks(), 18)
+
 
 if __name__ == '__main__':
     unittest.main()

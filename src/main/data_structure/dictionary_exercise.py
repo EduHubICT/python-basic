@@ -13,6 +13,7 @@ from src.main.logger.py_logger import PyLogger
 logger = PyLogger.get_configured_logger()
 from collections import Counter
 import operator
+import itertools
 
 class Dict:
 
@@ -88,59 +89,5 @@ class Dict:
             n2 = marks.pop('Second')
             marks['First + Second'] = (n1 + n2) / 2
         return tutorial
-    
-    
-    # sort by value
-    def sort_dict_descending_order(self):
-        descending_order = dict(sorted(self.dict.items(), key = operator.itemgetter(1)))
-        return descending_order
-    
-    
-    #  Write a Python script to concatenate following dictionaries to create a new one.
-    def concatenate_dicts(self, dict2):
-        new_dict = {}
-        for d in (self.dict, dict2):
-            new_dict.update(d)
-        return new_dict
-    
-    
-    # Generate and print a dictionary that contains a number in the form (x, x*x)
-    def create_dict_within_range(self, _range):
-        _dict = dict()
-        for x in range(1, _range + 1):
-            _dict [x] = x * x
-        return _dict
 
-
-    # Write a Python program to map two lists into a dictionary.
-    def two_lists_into_dictionary(self, keys,values):
-        _dict = dict(zip(keys, values))
-        return _dict
     
-    
-    # Remove duplicates from Dictionary
-    def remove_duplicates(self):
-        result = dict()
-        for key, value in self.dict.items():
-            if value not in result.values():
-                result[key] = value
-        return result
-        
-    
-    # dictionary empty or not
-    def empty_or_not(self):
-        if not bool(self.dict):
-            return True
-        return False
-    
-    
-    # Write a Python program to combine two dictionary adding values for common keys.
-    def common_keys_sum(self, dict1):
-        new_dict = Counter(self.dict) + Counter(dict1)
-        return new_dict
-    
-    
-    # list unique values of dict
-    def unique_values(self):
-        new_list = set([values for _, values in self.dict.items()])
-        return new_list

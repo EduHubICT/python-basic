@@ -60,7 +60,7 @@ class Tuple:
         return tuple(sorted(self.tuple, key=lambda x: float(x[1]), reverse=True))
 
     # Count and average Best three tutorial marks
-    def average_tutorial_marks(self):
+    def calculate_average_tutorial_marks(self):
         marks = [('course1', '12'), ('course2', '18'), ('course3', '15'), ('course4', '20'), ('course5', '25')]
         total = 0
         temp = 100

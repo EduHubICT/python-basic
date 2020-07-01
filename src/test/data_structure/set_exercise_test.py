@@ -39,6 +39,14 @@ class SetTest(unittest.TestCase):
         self.assertTrue(find_supersets({"b", "e", "f", "c", "a"}, {"a", "c", "b"}))
         self.assertFalse(find_supersets({"a", "b", "c", "e"}, {"a", "d", "c"}))
 
+    def test_find_maximum_value(self):
+        self.assertEqual(find_maximum_value({11, 33, 25, 62, 18, 90}), 90)
+        self.assertEqual(find_maximum_value({15, 39, 125, 32, 74, 83}), 125)
+
+    def test_find_minimum_value(self):
+        self.assertEqual(find_minimum_value({121, 133, 65, 32, 98, 190}), 32)
+        self.assertEqual(find_minimum_value({150, 19, 225, 22, 94, 43}), 19)
+
 
 if __name__ == '__main__':
     unittest.main()

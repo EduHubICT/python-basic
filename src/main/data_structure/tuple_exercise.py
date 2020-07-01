@@ -58,3 +58,17 @@ class Tuple:
     # sort a tuple by its float element.
     def sort_tuple_by_float_element(self):
         return tuple(sorted(self.tuple, key=lambda x: float(x[1]), reverse=True))
+
+    # Count and average Best three tutorial marks
+    def calculate_average_tutorial_marks(self):
+        marks = [('course1', '12'), ('course2', '18'), ('course3', '15'), ('course4', '20'), ('course5', '25')]
+        total = 0
+        temp = 100
+        average = 0
+        for x in marks:
+            key = int(x[1])
+            if key < temp:
+                temp = key
+            total = total + key
+            average = total / len(marks)
+        return average

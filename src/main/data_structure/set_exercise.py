@@ -1,8 +1,7 @@
 from src.main.logger.py_logger import PyLogger
 
-
 logger = PyLogger.get_configured_logger()
-    
+
 """
 Set contain only unique value. No duplicate is possible. 
 set is immutable but mutable as whole.
@@ -26,7 +25,7 @@ def access_value_in_set(set_of_number, value):
     for number in set_of_number:
         if number == value:
             logger.info('{} is in the set'.format(value))
-            
+
             return 'yes'
 
 
@@ -35,13 +34,13 @@ def add_remove_in_set(set_of_number, add_value, remove_value):
     if add_value is not None:
         set_of_number.add(add_value)
         logger.info('New set after adding a value: {}'.format(set_of_number))
-        
+
         return 'Add'
-    
+
     elif remove_value is not None:
         set_of_number.discard(remove_value)
         logger.info('New set after removing a value: {}'.format(set_of_number))
-        
+
         return 'Remove'
 
 
@@ -99,3 +98,13 @@ def find_supersets(set_a, set_b) -> bool:
             return False
 
     return True
+
+
+# Find Maximum value in a set
+def find_maximum_value(set_a) -> int:
+    return max(set_a)
+
+
+# Find Minimum value in a set
+def find_minimum_value(set_a) -> int:
+    return min(set_a)

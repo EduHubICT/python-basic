@@ -9,10 +9,11 @@ from src.main.data_structure.linked_list_exercise import *
 '''
 
 
-def solution_1():
+def get_solution_1():
     sl_list = SinglyLinkedList()
     sl_list.insert_at_beginning(5)
     sl_list.insert_at_beginning(4)
     sl_list.insert_at_beginning(6)
     sl_list.insert_at_beginning(10)
     sl_list.insert_at_beginning(7)
+    logger.info(sl_list.traversing())

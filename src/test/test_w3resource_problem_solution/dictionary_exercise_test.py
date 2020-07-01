@@ -59,6 +59,53 @@ class DictTest(unittest.TestCase):
     def test_create_table(self):
         _dict = Dict({})
         self.assertEqual(_dict.create_table(), None)
+    
+    def test_count_values_true(self):
+        _dict = Dict({})
+        self.assertEqual(_dict.count_values_true([{'id': 1, 'success': True, 'name': 'Lary'},\
+                                                  {'id': 2, 'success': False, 'name': 'Rabi'},\
+                                                  {'id': 3, 'success': True, 'name': 'Alex'}]),\
+                         2)
+        
+    def test_remove_space(self):
+        _dict = Dict({'S  001': ['Math', 'Science'], 'S    002': ['Math', 'English']})
+        self.assertEqual(_dict.remove_space(), {'S001': ['Math', 'Science'], 'S002': ['Math', 'English']})
+        
+    def test_top_three(self):
+        _dict = Dict({'item1': 45.50, 'item2':35, 'item3': 41.30, 'item4':55, 'item5': 24})
+        self.assertEqual(_dict.top_three(), None)
+        
+    def test_dictionary_indexing(self):
+        _dict = Dict({1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60})
+        self.assertEqual(_dict.dictionary_indexing(), None)
+        
+    def test_check_key_existing(self):
+        _dict = Dict({'name': 'Alex', 'class': 'V', 'roll_id': '2'})
+        self.assertEqual(_dict.check_key_existing({'class', 'name'}), True)
+        
+    def test_number_values_in_dictionary(self):
+        _dict = Dict({'Alex': ['subj1', 'subj2', 'subj3'], 'David': ['subj1', 'subj2']})
+        self.assertEqual(_dict.number_values_in_dictionary(), 5)
+        
+    def test_replace_with_average(self):
+        _dict = Dict({})
+        
+        self.assertEqual(_dict.replace_with_average([{'id' : 1, 'subject' : 'math', 'V' : 70, 'VI' : 82},
+  {'id' : 2, 'subject' : 'math', 'V' : 73, 'VI' : 74},
+  {'id' : 3, 'subject' : 'math', 'V' : 75, 'VI' : 86}]), \
+                         [{'subject': 'math', 'id': 1, 'V+VI': 76.0}, \
+                          {'subject': 'math', 'id': 2, 'V+VI': 73.5}, \
+                          {'subject': 'math', 'id': 3, 'V+VI': 80.5}] )
+
+    
+    def test_dictionary_in_jason(self):
+        _dict = Dict({})
+        list_of_dict =  [
+  {'id' : 1, 'subject' : 'math', 'V' : 70, 'VI' : 82},
+  {'id' : 2, 'subject' : 'math', 'V' : 73, 'VI' : 74},
+  {'id' : 3, 'subject' : 'math', 'V' : 75, 'VI' : 86}
+]
+        self.assertEqual(_dict.dictionary_in_jason(), None)
         
         
 if __name__ == '__main__':

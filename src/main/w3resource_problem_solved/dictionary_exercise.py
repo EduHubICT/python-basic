@@ -4,9 +4,12 @@ from src.main.logger.py_logger import PyLogger
 
 logger = PyLogger.get_configured_logger()
 
+from heapq import nlargest
 from collections import Counter
 import operator
 import itertools
+import json
+
 
 
 class Dict:
@@ -151,5 +154,123 @@ class Dict:
         my_dict = {'C1':[1,2,3],'C2':[5,6,7],'C3':[9,10,11]}
         for row in zip(*[[key] + (value) for key, value in sorted(my_dict.items())]):
             print(*row)
+            
+            
+    '''
+    Write a Python program to count the values associated with key in a dictionary.
+    '''
+    
+    
+    def count_values_true(self, list_of_student):
+        count = sum([d['success'] for d in list_of_student])
+        logger.info('Count:- '.format(count))
+        return count
+    
+    
+    '''
+    27. Convert a list into a nested dictionary of keys
+    
+    Rather than immutable objects such as int, float and str, mutable objects such as list and dict be careful when assigning.
+If you use = consecutively, the same object is assigned to all variables, so if you change the value of element or add a new element, the other will also change.
+    '''
+    
+    
+    '''
+    Python Exercise: Remove spaces from dictionary keys
+    Go to below link for details about translate in string.
+    https://www.geeksforgeeks.org/python-string-translate/
+    '''
+    
+    
+    def remove_space(self):
+        new_dict = { x.translate({32 : None}) : y for x,y in self.dict.items()}
+        return new_dict
+    
+    
+    '''
+    Get the top three items in a shop
+    go to the below links to know about itemgetter
+    https://stackoverflow.com/questions/18595686/how-does-operator-itemgetter-and-sort-work-in-python#:~:text=itemgetter(n)%20constructs%20a%20callable,th%20element%20out%20of%20it.&text=So%2C%20here's%20an%20important%20note,other%20functions%20as%20a%20parameter.
+    '''
+    
+    
+    def top_three(self):
+        for key ,value in nlargest(3, self.dict.items(), key = operator.itemgetter(1)):
+            logger.info('key : {}, value : {}'.format(key,value))
+            
+            
+    '''
+    Get the key, value and item(indexing) in a dictionary
+    '''
+    
+    
+    def dictionary_indexing(self):
+        for index, (key, value) in enumerate(self.dict.items(), 1):
+            logger.info('Index = {}, Key = {}, Value = {}'.format(index, key, value))
+            
+            
+    '''
+    
+    Check multiple keys exists in a dictionary
+    
+    '''
+    
+    
+    def check_key_existing(self, keys):
+        return self.dict.keys() >= keys
+    
+    
+    '''
+    
+    Count number of items in a dictionary value that is a list
+    1. why we used map ? why don't below approach?
+    count = 0
+    for i in dict.values():
+        count += len(i)
+        
+    Answer : They both are same. map iterate list into a function(like: len). 
+    
+    '''
+    
+    
+    def number_values_in_dictionary(self):
+        return sum(map(len, self.dict.values()))
+    
+    
+    '''
+    
+    Replace dictionary values with their average
+    link : https://www.w3schools.com/python/ref_dictionary_pop.asp
+    
+    '''
+    
+    
+    def replace_with_average(self, list_of_dict):
+        for dic in list_of_dict:
+            first = dic.pop('V')
+            second = dic.pop('VI')
+            dic['V+VI'] = (first + second)/2
+        return list_of_dict
+    
+    
+    '''
+    
+    Store a given dictionary in a json file
+    
+    '''
+    
+    
+    def dictionary_in_jason(self):
+        
+ 
+        with open("src/main/w3resource_problem_solved/dictionary", "w") as f:
+            json.dump(self.dict, f, indent = 4, sort_keys = True)
+            logger.info(self.dict)
+            
+        with open('src/main/w3resource_problem_solved/dictionary') as f:
+            data = json.load(f)
+            logger.info(data)
+            
+
 
     

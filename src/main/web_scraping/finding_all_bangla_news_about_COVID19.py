@@ -1,5 +1,5 @@
 from src.main.data_structure.set_exercise import *
-from src.main.web_scrapping.scrapper import *
+from src.main.web_scraping.scrapper import *
 import time
 
 headers = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) snap Chromium/83.0.4103.106 Chrome/83.0.4103.106 Safari/537.36"

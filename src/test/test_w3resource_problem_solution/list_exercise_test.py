@@ -65,6 +65,25 @@ class TestList(unittest.TestCase):
     def test_list_comprehension(self):
         self.assertEqual(list_comprehension(10), [(1, 3, 5), (1, 3, 7), (1, 3, 9), (1, 5, 7), (1, 5, 9), (1, 7, 9), (3, 5, 7), (3, 5, 9), (3, 7, 9), (5, 7, 9)])
         
+    def test_change_position(self):
+        self.assertEqual(change_position([0, 1, 2, 3, 4, 5]), [1, 0, 3, 2, 5, 4])
+        
+    def test_arrange_character_wise(self):
+        self.assertEqual(arrange_character_wise(['be','have','do','say','get','make','go',\
+                                                 'know','take','see','come','think','look','want','give','use','find','tell','ask','work',\
+                                                 'seem','feel','leave','call']), None)
+                         
+    def test_sorted_unique_array(self):
+        self.assertEqual(sorted_unique_array([(1, 2), (3, 4), (1, 2), (5, 6), (7, 8), (1, 2),\
+                                              (3, 4), (3, 4),(7, 8), (9, 10)]), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        
+    def test_insert_element_before(self):
+        self.assertEqual(insert_element_before(['Red', 'Green', 'Black']), \
+                         ['k', 'Red', 'k', 'Green', 'k', 'Black'])
+        
+    def test_nested_lists(self):
+        self.assertEqual(nested_lists([['Red'], ['Green'], ['Black']]), None)
+        
 
 if __name__ == '__main__':
     unittest.main()

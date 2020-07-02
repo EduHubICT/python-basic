@@ -9,6 +9,10 @@ import re
 logger = PyLogger.get_configured_logger()
 
 
+def scrape_content(content):
+    return BeautifulSoup(BeautifulSoup(content, 'html.parser').prettify(), 'html.parser')
+
+
 def get_valid_link(url):
     parse_url = urlparse(url, 'http')
     if parse_url.path is not None:
@@ -36,4 +40,4 @@ def scrap_url(url, headers=None):
         soup = BeautifulSoup(soup.prettify(), 'html.parser')
         return soup
 
-    return BeautifulSoup("")  # return empty result
+    return BeautifulSoup("<html></html>", 'html.parser')  # return empty result

@@ -10,8 +10,9 @@ logger = PyLogger.get_configured_logger()
 
 class Node:
     def __init__(self, data=None):
-        self.data = data
-        self.next = None
+        self.data = data  # to store value
+        self.next = None  # pointer to define next node
+        self.prev = None  # pointer to define previous node
 
 
 """
@@ -74,3 +75,37 @@ class SinglyLinkedList:
             return
 
         previous_node.next = current_node.next
+
+
+'''
+Doubly linked list can move both direction
+'''
+
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def append(self, data):
+        new_node = Node(data)
+
+        if self.head:
+            self.tail.next = new_node
+            new_node.prev = self.tail
+            self.tail = new_node
+            self.tail.next = None
+        else:
+            self.head = self.tail = new_node
+            self.head.prev = None
+            self.tail.next = None
+
+    def traversing(self):
+        current = self.head
+        get_iterations = []
+        while current:
+            get_iterations.append(current.data)
+            logger.info("{}".format(current.data))
+            current = current.next
+        return get_iterations
+

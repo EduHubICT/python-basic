@@ -1,0 +1,75 @@
+{
+  "companies":
+  [
+    {
+      "companyName" : "Therap",
+      "url"         : "https://therap.recruiterbox.com/",
+      "find_all"    :
+        {
+        "tag"   : "div",
+        "class" : "js-card list-item list-item-clickable js-careers-page-job-list-item",
+        "id"    : "",
+          "find": {
+
+          }
+        }
+    },
+    {
+      "companyName" : "Cefalo",
+      "url"         : "https://www.cefalo.com/career/",
+      "find_all"    : {
+        "tag"   : "div",
+        "class" : "custom-column-wrap-inner",
+        "id"    : ""
+      }
+    },
+    {
+      "companyName" : "Selise",
+      "url"         : "https://selise.ch/career/",
+      "find_all"    : {
+        "tag"   : "div",
+        "class" : "job-posts-attributes",
+        "id"    : ""
+      }
+    },
+    {
+      "companyName" : "NewsCred",
+      "url"         : "https://newscred.com/careers/",
+      "find_all"    : {
+
+      }
+    },
+    {
+      "companyName" : "Data Soft",
+      "url"         : "http://datasoft-bd.com/career/",
+      "find_all"    : {
+
+      }
+    },
+    {
+      "companyName" : "Brain Station 23",
+      "url"         : "https://career.brainstation-23.com/",
+      "find_all"    :{
+
+      }
+    },
+    {
+      "companyName" : "Southtech Limited",
+      "url"         : "https://career.southtechgroup.com/",
+      "find_all"    : {
+
+      }
+    },
+    {
+      "companyName" : "Magnito Digital",
+      "url"         : "http://magnitodigital.com/career/",
+      "find_all"    : {
+
+      }
+    },
+    {
+      "companyName" : "BJIT Group",
+      "url"         : "https://bjitgroup.com/career/"
+    }
+  ]
+}

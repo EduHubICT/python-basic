@@ -1,5 +1,13 @@
 from src.main.logger.py_logger import PyLogger
 
+import random
+from random import *
+import itertools
+from itertools import zip_longest, chain, tee, groupby, combinations
+from operator import itemgetter
+import ast
+
+
 logger = PyLogger.get_configured_logger()
 
 ''' 
@@ -40,7 +48,7 @@ def three_dimensional_array(first,second,third):
 '''
 
 
-from random import *
+
 def shuffled_list(list_of_numbers):
     random.seed(0)
     shuffle(list_of_numbers)
@@ -76,7 +84,7 @@ def index_of_item(list_of_numbers, number):
 
 '''
 
-import itertools
+
 def flatten_list(list_2d):
     return list(itertools.chain(*list_2d))
 
@@ -188,7 +196,6 @@ def check_sublist(list_1, sub_list):
 '''
 
 
-from itertools import combinations
 def create_all_sublist(list_of_items):
     sub_lists = []
     for item in range (len(list_of_items) + 1):
@@ -258,7 +265,7 @@ def list_comprehension(number):
 '''
 
 
-from itertools import zip_longest, chain, tee
+
 def change_position(list_of_items):
     return list(chain.from_iterable(zip_longest(list_of_items[1::2], list_of_items[::2])))
 
@@ -270,8 +277,7 @@ def change_position(list_of_items):
 '''
 
 
-from itertools import groupby
-from operator import itemgetter
+
 
 def arrange_character_wise(list_of_words):
     for letter, words in groupby(sorted(list_of_words), key = itemgetter(0)):
@@ -367,7 +373,7 @@ def remove_specific_key(list_of_dictionaries):
 '''
 
 
-import ast
+
 def string_to_list(string):
     output_list = ast.literal_eval(string)
     return output_list
@@ -451,7 +457,6 @@ def extend_list(list_1, list_2):
 '''
 
 
-import itertools
 def list_of_lists_remove_duplicate(list_of_lists):
     list_of_lists.sort()
     return list(item for item, _ in itertools.groupby(list_of_lists))
@@ -535,7 +540,7 @@ def insert_spec_position(x, n_list, pos):
 '''
 
 
-import random
+
 def random_select_nums(n_list, n):
         new_list = random.sample(n_list, n)
         logger.info(new_list)

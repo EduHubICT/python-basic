@@ -312,6 +312,233 @@ def insert_element_before(list_of_ele):
 def nested_lists(list_of_list):
     logger.info('\n'.join([str(nested_list) for nested_list in list_of_list]))
     
+    
+'''
 
-            
-            
+50.  Sort a list of nested dictionaries
+
+'''
+
+
+def sort_nested_dictionary(list_nested_dictionary):
+    list_nested_dictionary.sort(key = lambda e :e['key']['subkey'], reverse = True)
+    return list_nested_dictionary
+
+
+'''
+
+51. Split a list every Nth element
+
+'''
+
+
+def split_list_nth_element(list_of_items, n):
+    return [list_of_items[i::n] for i in range(n)]
+
+
+'''
+
+54. Write a Python program to concatenate elements of a list.
+
+'''
+
+
+def concatenate_elements(list_of_string):
+    logger.info('-'.join(list_of_string))
+    logger.info(''.join(list_of_string))
+    #print(''.join(list_of_string))
+    
+    
+'''
+
+55. Write a Python program to remove key values pairs from a list of dictionaries. 
+
+'''
+
+
+def remove_specific_key(list_of_dictionaries):
+    return [{k : v for k, v in d.items() if k != 'key1'} for d in list_of_dictionaries]
+
+
+'''
+
+56.Write a Python program to convert a string to a list. 
+
+'''
+
+
+import ast
+def string_to_list(string):
+    output_list = ast.literal_eval(string)
+    return output_list
+
+
+'''
+
+58. Write a Python program to replace the last element in a list with another list. 
+
+'''
+
+
+def replace_last_item(num_1, num_2):
+    #um_1[-1] = num_2 ,then output will be like [1, 3, 5, 7, 9, [2, 4, 6, 8]]
+    num_1[-1:] = num_2
+    return num_1
+
+
+'''
+
+60.Python program to find a tuple, the smallest second index value from a list of tuples.
+
+'''
+
+
+def tuple_with_smallest_second_value(list_of_tuple):
+    return min(list_of_tuple, key = lambda a : a[1])
+
+
+'''
+
+65.Access dictionary key’s element by index
+
+'''
+
+
+def access_by_index(dictionary):
+    logger.info(list(dictionary)[0]) # First key
+    logger.info(list(dictionary)[1]) # Second key
+    logger.info(list(dictionary)) # fAll element
+    
+    
+'''
+
+66. Write a Python program to find the list in a list of lists whose sum of elements is the highest.
+
+'''
+
+
+def find_list_highest_sum(list_of_list):
+    return max(list_of_list, key = sum)
+
+
+'''
+
+67.Find all the values in a list are greater than a specified number
+
+'''
+
+
+def all_greater_num(list_of_num):
+    return all(num >= 200 for num in list_of_num)
+
+
+'''
+
+68.Extend a list without append
+
+'''
+
+
+def extend_list(list_1, list_2):
+    list_1[:0] = list_2
+    return list_1
+
+
+'''
+
+69. Write a Python program to remove duplicates from a list of lists.
+
+'''
+
+
+import itertools
+def list_of_lists_remove_duplicate(list_of_lists):
+    list_of_lists.sort()
+    return list(item for item, _ in itertools.groupby(list_of_lists))
+
+
+'''
+
+73. Remove consecutive duplicates of a given list
+
+'''
+
+
+def compress(l_nums):
+    return [key for key, group in itertools.groupby(l_nums)] 
+
+
+'''
+
+74. Pack consecutive duplicates of a given list elements into sublists
+
+'''
+
+
+def pack_consecutive_duplicates(list_of_num):
+    return [list(group) for key,group in itertools.groupby(list_of_num)]
+        
+    
+'''
+
+75.Create a list reflecting the run-length encoding from a list
+
+'''
+
+
+def encode_list(s_list):
+    return [[len(list(group)), key] for key, group in groupby(s_list)]
+
+
+'''
+
+77. Decode a run-length encoded given list
+
+'''
+
+
+def decode(alist):
+    def aux(g):
+        if isinstance(g, list):
+            return [(g[1], range(g[0]))]
+        else:
+            return [(g, [0])]
+    return [x for g in alist for x, R in aux(g) for i in R]
+
+
+'''
+
+79. Remove the K'th element from a given list, print the new list
+
+'''
+
+
+def remove_kth_element(n_list, L):
+    return  n_list[:L-1] + n_list[L:]
+
+
+'''
+
+80.Write a Python program to insert an element at a specified position into a given list.
+
+'''
+
+
+def insert_spec_position(x, n_list, pos):
+    return n_list[:pos-1]+[x]+n_list[pos-1:]
+
+
+'''
+
+81.Extract a given number of randomly selected elements from a given list
+
+'''
+
+
+import random
+def random_select_nums(n_list, n):
+        new_list = random.sample(n_list, n)
+        logger.info(new_list)
+        
+        
+        

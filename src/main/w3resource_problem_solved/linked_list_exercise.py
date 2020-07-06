@@ -5,9 +5,9 @@ from src.main.logger.py_logger import *
 # called the singly linked list we already implemented in data_structure
 from src.main.data_structure.linked_list_exercise import *
 
-'''
+"""
 1. Write a Python program to create a singly linked list, append some items and iterate through the list.
-'''
+"""
 
 
 def get_solution_1():

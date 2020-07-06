@@ -22,7 +22,10 @@ def determine_letters_case(sentence):
         elif letter.islower():
             lower_case_count += 1
     logger.info(
-        "Original String : {} , UpperCase : {} , LowerCase {}".format(sentence, upper_case_count, lower_case_count))
+        "Original String : {} , UpperCase : {} , LowerCase {}".format(
+            sentence, upper_case_count, lower_case_count
+        )
+    )
     return upper_case_count, lower_case_count
 
 
@@ -40,9 +43,7 @@ def is_prime(number):
 
 # A function to determine whether a string is palindrome or not
 def is_palindrome(string):
-    rev = ''.join(reversed(string))
+    rev = "".join(reversed(string))
     if string == rev:
         return True
     return False
-
-

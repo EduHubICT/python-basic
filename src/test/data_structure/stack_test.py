@@ -4,7 +4,6 @@ from src.main.data_structure.stack import *
 
 
 class TestStack(unittest.TestCase):
-
     def test_top(self):
         stack = Stack([1, 5, 4, 8, 10])
         self.assertEqual(stack.top(), 10)
@@ -39,5 +38,5 @@ class TestStack(unittest.TestCase):
         self.assertEqual(stack.display(), [1, 9, 2])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -21,10 +21,10 @@ def count_char_appearance(string):
 def add_string(string):
     length = len(string)
     if length > 2:
-        if string[-3:] == 'ing':
-            string += 'ly'
+        if string[-3:] == "ing":
+            string += "ly"
         else:
-            string += 'ing'
+            string += "ing"
     return string
 
 
@@ -32,12 +32,12 @@ def add_string(string):
 # if 'not' follows the 'poor', replace the whole 'not'...'poor' substring with 'good'.
 # Return the resulting string
 def replace_string(string):
-    string_not = string.find('not')
-    string_poor = string.find('poor')
+    string_not = string.find("not")
+    string_poor = string.find("poor")
 
     if string_poor > string_not > 0 and string_poor > 0:
         # replace 'not...poor' with 'good'
-        string = string.replace(string[string_not:(string_poor + 4)], 'good')
+        string = string.replace(string[string_not : (string_poor + 4)], "good")
         return string
     else:
         return string
@@ -55,7 +55,7 @@ def find_longest_word(words_list):
 # Remove the nth index character from a nonempty string
 def remove_char(string, n):
     first_part = string[:n]  # slice the string upto nth index
-    last_part = string[n + 1:]  # slice the string after nth index
+    last_part = string[n + 1 :]  # slice the string after nth index
     return first_part + last_part  # concatenate the two slice
 
 

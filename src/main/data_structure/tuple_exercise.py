@@ -13,14 +13,15 @@ logger = PyLogger.get_configured_logger()
 
 
 class Tuple:
-
     def __init__(self, tup):
         self.tuple = tup
 
     # method overloading to return a single object or a range of object
     def tuple_indexing(self, left, right):
         if right is not None:
-            return self.tuple[left: right]  # this will return object from left(including) to right(excluding)
+            return self.tuple[
+                left:right
+            ]  # this will return object from left(including) to right(excluding)
         else:
             return self.tuple[left]  # this will return a single object
 
@@ -32,8 +33,8 @@ class Tuple:
     # Actually, tuple doesn't support removing element by index
     def remove_tuple_element(self, index):
         tuple_length = self.tuple_size()
-        tuple1 = self.tuple[0: index]
-        tuple2 = self.tuple[index + 1: tuple_length]
+        tuple1 = self.tuple[0:index]
+        tuple2 = self.tuple[index + 1 : tuple_length]
 
         return tuple1 + tuple2
 
@@ -51,7 +52,7 @@ class Tuple:
 
     # tuple into string
     def tuple_to_string(self):
-        _str = ''.join(self.tuple)
+        _str = "".join(self.tuple)
         logger.info(_str)
         return _str
 
@@ -61,7 +62,13 @@ class Tuple:
 
     # Count and average Best three tutorial marks
     def calculate_average_tutorial_marks(self):
-        marks = [('course1', '12'), ('course2', '18'), ('course3', '15'), ('course4', '20'), ('course5', '25')]
+        marks = [
+            ("course1", "12"),
+            ("course2", "18"),
+            ("course3", "15"),
+            ("course4", "20"),
+            ("course5", "25"),
+        ]
         total = 0
         temp = 100
         average = 0

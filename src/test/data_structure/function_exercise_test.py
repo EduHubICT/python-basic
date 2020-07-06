@@ -20,12 +20,12 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(is_prime(111), False)
 
     def test_is_palindrome(self):
-        self.assertEqual(is_palindrome('exe'), True)
-        self.assertEqual(is_palindrome('asrta'), False)
-        self.assertEqual(is_palindrome('daddad'), True)
-        self.assertEqual(is_palindrome('xecrghuotr'), False)
-        self.assertEqual(is_palindrome('1234321'), True)
+        self.assertEqual(is_palindrome("exe"), True)
+        self.assertEqual(is_palindrome("asrta"), False)
+        self.assertEqual(is_palindrome("daddad"), True)
+        self.assertEqual(is_palindrome("xecrghuotr"), False)
+        self.assertEqual(is_palindrome("1234321"), True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

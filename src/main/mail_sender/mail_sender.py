@@ -5,7 +5,6 @@ logger = PyLogger.get_configured_logger()
 
 
 class MailSender:
-
     def __init__(self, _from, password):
         """
 
@@ -20,12 +19,12 @@ class MailSender:
         self.__password = password
 
     def send_mail(self, _to, subject, body):
-        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()
         server.login(self.__from, self.__password)
 
-        msg = f'Subject: {subject}\n\n{body}'
+        msg = f"Subject: {subject}\n\n{body}"
         server.sendmail(self.__from, _to, msg)
         server.close()
-        logger.info('You mail has been sent successfully to {}'.format(_to))
+        logger.info("You mail has been sent successfully to {}".format(_to))
         return True

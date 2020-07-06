@@ -3,11 +3,11 @@ from src.main.web_scraping.scraper import *
 
 
 def scrap_companies():
-    file = open('resource.json')
+    file = open("resource.json")
     data = json.load(file)
-    for company in data['companies']:
-        name = company['companyName']
-        url = company['url']
+    for company in data["companies"]:
+        name = company["companyName"]
+        url = company["url"]
 
         if not company['jobs_list'] or not company['jobs_list']['tag']:
             continue
@@ -19,7 +19,7 @@ def scrap_companies():
             logger.info("Opening Jobs from {}".format(name))
             for job in jobs:
                 content = scrape_content(str(job))
-                path = content.find('a').get('href')
+                path = content.find("a").get("href")
                 link = get_valid_link(path)
                 if not link:
                     link = url + path
@@ -39,6 +39,8 @@ def scrap_companies():
                     for line in details:
                         if line.strip():
                             print(line.strip())
+                item = content.get_text().strip().split("\n")
+                logger.info("Job info: {} \n Job link: \t {}".format(item, link))
         except:
             pass
 

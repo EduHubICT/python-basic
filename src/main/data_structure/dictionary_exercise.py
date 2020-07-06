@@ -6,14 +6,11 @@
   the items are separated by commas,
   and the whole thing is enclosed in curly braces.
 """
-from typing import Dict, Any
 
 from src.main.logger.py_logger import PyLogger
 
 logger = PyLogger.get_configured_logger()
-from collections import Counter
-import operator
-import itertools
+
 
 class Dict:
 
@@ -31,12 +28,12 @@ class Dict:
 
     # to get single item value
     def get_element_by_key(self, key):
-        logger.warning('You can get key error, use exception')
+        logger.warning("You can get key error, use exception")
         return self.dict[key]
 
     # to remove single item
     def delete_element_by_key(self, key):
-        logger.warning('You can get key error, use exception')
+        logger.warning("You can get key error, use exception")
         del self.dict[key]
         return self.dict
 
@@ -81,13 +78,12 @@ class Dict:
 
     def tutorial_marks_average(self):
         tutorial = [
-            {'id': 101, 'subject': 'C', 'First': 23, 'Second': 22},
-            {'id': 102, 'subject': 'Python', 'First': 23, 'Second': 24},
-            {'id': 103, 'subject': 'Java', 'First': 25, 'Second': 16}]
+            {"id": 101, "subject": "C", "First": 23, "Second": 22},
+            {"id": 102, "subject": "Python", "First": 23, "Second": 24},
+            {"id": 103, "subject": "Java", "First": 25, "Second": 16},
+        ]
         for marks in tutorial:
-            n1 = marks.pop('First')
-            n2 = marks.pop('Second')
-            marks['First + Second'] = (n1 + n2) / 2
+            n1 = marks.pop("First")
+            n2 = marks.pop("Second")
+            marks["First + Second"] = (n1 + n2) / 2
         return tutorial
-
-    

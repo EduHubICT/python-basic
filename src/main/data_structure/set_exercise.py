@@ -15,7 +15,7 @@ set() - to define an empty set
 def create_unique_value_set(list_of_number):
     unique_values = set(list_of_number)
 
-    logger.info('Unique value representation: {}'.format(unique_values))
+    logger.info("Unique value representation: {}".format(unique_values))
 
     return unique_values
 
@@ -24,24 +24,24 @@ def create_unique_value_set(list_of_number):
 def access_value_in_set(set_of_number, value):
     for number in set_of_number:
         if number == value:
-            logger.info('{} is in the set'.format(value))
+            logger.info("{} is in the set".format(value))
 
-            return 'yes'
+            return "yes"
 
 
 # add a value in the set or remove a value
 def add_remove_in_set(set_of_number, add_value, remove_value):
     if add_value is not None:
         set_of_number.add(add_value)
-        logger.info('New set after adding a value: {}'.format(set_of_number))
+        logger.info("New set after adding a value: {}".format(set_of_number))
 
-        return 'Add'
+        return "Add"
 
     elif remove_value is not None:
         set_of_number.discard(remove_value)
-        logger.info('New set after removing a value: {}'.format(set_of_number))
+        logger.info("New set after removing a value: {}".format(set_of_number))
 
-        return 'Remove'
+        return "Remove"
 
 
 # return new set containing common and uncommon items between set_a and set_b

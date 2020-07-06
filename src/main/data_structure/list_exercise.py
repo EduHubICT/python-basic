@@ -1,4 +1,3 @@
-from collections import deque
 from src.main.logger.py_logger import PyLogger
 
 logger = PyLogger.get_configured_logger()
@@ -9,7 +8,7 @@ def find_average(list_of_number):
     for number in list_of_number:
         summation = summation + number
 
-    logger.info('Average: {}'.format(summation / len(list_of_number)))
+    logger.info("Average: {}".format(summation / len(list_of_number)))
 
     return summation / len(list_of_number)
 
@@ -88,10 +87,10 @@ def binary_search(list_of_number, value):
 
 def binary_search_recursive(list_of_numbers, target, start, end):
     if start > end:
-        return 'NO'
+        return "NO"
     mid = start + (end - start) // 2
     if list_of_numbers[mid] == target:
-        return 'Yes'
+        return "Yes"
     elif list_of_numbers[mid] > target:
         return binary_search_recursive(list_of_numbers, target, start, mid - 1)
     elif list_of_numbers[mid] < target:
@@ -141,7 +140,7 @@ def binary_search_circular_sorted(list_of_numbers, value):
         mid = start + (end - start) // 2
 
         if list_of_numbers[mid] == value:
-            return 'Yes'
+            return "Yes"
 
         elif list_of_numbers[mid] <= list_of_numbers[end]:
             if list_of_numbers[mid] < value <= list_of_numbers[end]:
@@ -208,36 +207,15 @@ def insertion_sort_dsc(list_of_number):
 
 # find specified type of item from a list of different type of items
 
+
 def specified_type_item(list_different_type, data_type):
     count = 0
     for item in list_different_type:
         if type(item) == data_type:
             count += 1
-    logger.info('Total count of {} type item : {}'.format(data_type, count))
+    logger.info("Total count of {} type item : {}".format(data_type, count))
     return count
 
 
 def remove_duplicates(list_of_duplicates):
     return list(set(list_of_duplicates))
-
-class Stack:
-
-    # Function to find all elements which are greater than all elements present to its right
-    def find(self):
-        stack = deque()
-        find_greater = []
-
-        for i in range(len(self)):
-
-            # pop all the elements that are less than the current element
-            while stack and stack[-1] < self[i]:
-                stack.pop()
-
-            # push current element into the stack
-            stack.append(self[i])
-
-        while stack:
-            find_greater.append(stack.pop())
-
-        return find_greater
-

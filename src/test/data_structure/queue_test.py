@@ -4,7 +4,6 @@ from src.main.data_structure.queue import *
 
 
 class TestQueue(unittest.TestCase):
-
     def test_front(self):
         q = Queue([1, 10, 2, 9])
         self.assertEqual(q.front(), 1)
@@ -17,7 +16,7 @@ class TestQueue(unittest.TestCase):
 
     def test_push(self):
         q = Queue()  # initiated an empty queue
-    #    q.pop()      # to check exception is working or not
+        #    q.pop()      # to check exception is working or not
         q.push(5)
         q.push(3)
         self.assertEqual(q.size(), 2)
@@ -38,5 +37,5 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(q.display(), [1, 7, 5, 3, 2, 6, 4])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -4,14 +4,17 @@ from src.main.data_structure.set_exercise import *
 
 class SetTest(unittest.TestCase):
     def test_unique_value(self):
-        self.assertEqual(create_unique_value_set([ 1, 1, 2, 4, 3, 5, 3]), { 1, 2, 3, 4, 5})
+        self.assertEqual(
+            create_unique_value_set([1, 1, 2, 4, 3, 5, 3]), {1, 2, 3, 4, 5}
+        )
 
     def test_access_value_in_set(self):
-        self.assertEqual(access_value_in_set({1, 3, 5, 6, 8, 9}, 3), 'yes')
-       
+        self.assertEqual(access_value_in_set({1, 3, 5, 6, 8, 9}, 3), "yes")
+
     def test_add_remove_in_set(self):
-        self.assertEqual(add_remove_in_set({1, 3, 5, 6, 8, 9}, 2, None), 'Add')
-        self.assertEqual(add_remove_in_set({1, 3, 5, 6, 8, 9}, None, 9), 'Remove')
+        self.assertEqual(add_remove_in_set({1, 3, 5, 6, 8, 9}, 2, None), "Add")
+        self.assertEqual(add_remove_in_set({1, 3, 5, 6, 8, 9}, None, 9), "Remove")
+
     def test_find_union(self):
         set_a = {"a", "b", "c"}
         set_b = {"c", "d"}
@@ -48,5 +51,5 @@ class SetTest(unittest.TestCase):
         self.assertEqual(find_minimum_value({150, 19, 225, 22, 94, 43}), 19)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

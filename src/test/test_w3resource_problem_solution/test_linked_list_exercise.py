@@ -7,5 +7,5 @@ class TestLinkedList(unittest.TestCase):
         get_solution_1()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

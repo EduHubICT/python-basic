@@ -117,3 +117,14 @@ def count_untill_tuple(list_of_tuple):
             break
         count += 1
     return count
+
+
+"""
+
+black and pre-commit check
+
+"""
+
+
+def tuple_range(list_of_tuple):
+    logger.info(list_of_tuple[:1])

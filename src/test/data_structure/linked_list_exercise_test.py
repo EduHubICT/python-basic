@@ -22,7 +22,9 @@ class SinglyLinkedListTest(unittest.TestCase):
         l_list.insert_at_beginning("Father")
         l_list.insert_at_beginning("GrandGrandFather")
         l_list.insert_at_middle(l_list.head, "GrandFather")
-        self.assertEqual(l_list.traversing(), ["GrandGrandFather", "GrandFather", "Father", "Me"])
+        self.assertEqual(
+            l_list.traversing(), ["GrandGrandFather", "GrandFather", "Father", "Me"]
+        )
 
     def test_insertion_at_end(self):
         l_list = SinglyLinkedList()
@@ -42,5 +44,5 @@ class SinglyLinkedListTest(unittest.TestCase):
         self.assertEqual(l_list.traversing(), [4, 2, 1])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

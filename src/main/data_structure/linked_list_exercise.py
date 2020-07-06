@@ -5,6 +5,7 @@ Linked List:    i) Singly linked list
 """
 
 from src.main.logger.py_logger import PyLogger
+
 logger = PyLogger.get_configured_logger()
 
 
@@ -77,9 +78,9 @@ class SinglyLinkedList:
         previous_node.next = current_node.next
 
 
-'''
+"""
 Doubly linked list can move both direction
-'''
+"""
 
 
 class DoublyLinkedList:
@@ -108,4 +109,3 @@ class DoublyLinkedList:
             logger.info("{}".format(current.data))
             current = current.next
         return get_iterations
-

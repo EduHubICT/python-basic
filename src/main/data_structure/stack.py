@@ -44,5 +44,3 @@ class Stack:
     # to see elements of stack
     def display(self):
         return self.stack
-
-

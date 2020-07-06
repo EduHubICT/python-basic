@@ -5,7 +5,7 @@ unit test file added in test section
 """
 
 """ 
-1. Write a Python program to create a lambda function that adds 15 to a given number passed in as an argument,
+1.  Write a Python program to create a lambda function that adds 15 to a given number passed in as an argument,
     also create a lambda function that multiplies argument x with argument y and print the result.
 """
 
@@ -21,7 +21,7 @@ def simple_multiplication(a, b):
 
 
 """ 
-2. Write a Python program to create a function that takes one argument, 
+2.  Write a Python program to create a function that takes one argument, 
     and that argument will be multiplied with an unknown given number 
 """
 
@@ -112,7 +112,9 @@ def find_intersection(list1, list2):
 
 
 def find_divisible_numbers(list_of_numbers, divisor1, divisor2):
-    return list(filter(lambda x: (x % divisor1 == 0 or x % divisor2 == 0), list_of_numbers))
+    return list(
+        filter(lambda x: (x % divisor1 == 0 or x % divisor2 == 0), list_of_numbers)
+    )
 
 
 """

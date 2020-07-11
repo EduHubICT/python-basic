@@ -31,7 +31,7 @@ def get_valid_link(url):
             return url
 
 
-def scrap_url(url, headers=None):
+def scrape_url(url, headers=None):
     try:
         page = requests.get(url, headers)
         page.raise_for_status()

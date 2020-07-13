@@ -1,7 +1,6 @@
 """
 w3Resource link: https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-linked-list.php
 """
-from src.main.logger.py_logger import *
 # called the singly linked list we already implemented in data_structure
 from src.main.data_structure.linked_list_exercise import *
 
@@ -20,9 +19,9 @@ def get_solution_1():
     sl_list.traversing()
 
 
-'''
+"""
 2. Write a python program to get the size of a singly linked list
-'''
+"""
 
 
 def get_size(sl_list):

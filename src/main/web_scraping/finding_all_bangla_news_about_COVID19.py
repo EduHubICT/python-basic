@@ -27,7 +27,9 @@ def print_only_corona_news(links):
 
         if find_intersection(set(training_keywords), set(title_words)):
             date = find_date_time(scrape_url(news_link, headers))
-            logger.info('Published: {}, Heading: {}, Link: {}'.format(date, title, news_link))
+            logger.info(
+                "Published: {}, Heading: {}, Link: {}".format(date, title, news_link)
+            )
             news_count += 1
         else:
             metadata = scrape_url(news_link, headers).find_all("meta")
@@ -41,7 +43,11 @@ def print_only_corona_news(links):
                     if find_intersection(set(training_keywords), set(sample_keywords)):
                         news_count += 1
                         date = find_date_time(scrape_url(news_link, headers))
-                        logger.info('Published: {}, Heading: {}, Link: {}'.format(date, title, news_link))
+                        logger.info(
+                            "Published: {}, Heading: {}, Link: {}".format(
+                                date, title, news_link
+                            )
+                        )
                         date = find_date_time(scrape_url(news_link, headers))
                         logger.info(
                             "Published: {}, Heading: {}, Link: {}".format(

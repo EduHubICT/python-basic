@@ -1,5 +1,5 @@
 import json
-from src.main.web_scraping.scrapper import *
+from src.main.web_scraping.scraper import *
 
 
 def scrap_companies():
@@ -9,10 +9,13 @@ def scrap_companies():
         name = company["companyName"]
         url = company["url"]
 
+        if not company["jobs_list"]["tag"]:
+            continue
+
         try:
-            tag = company["find_all"]
-            jobs = scrap_url(url)
-            jobs = jobs.find_all(tag["tag"], {"class": tag["class"]})
+            tag = company["jobs_list"]
+            jobs = scrape_url(url)
+            jobs = jobs.find_all(tag["tag"], {"class": tag["class"], "id": tag["id"]})
             logger.info("Opening Jobs from {}".format(name))
             for job in jobs:
                 content = scrape_content(str(job))
@@ -21,11 +24,15 @@ def scrap_companies():
                 if not link:
                     link = url + path
                 item = content.get_text().strip().split("\n")
+                item = [itm.strip() for itm in item if len(itm) > 0]
                 logger.info("Job info: {} \n Job link: \t {}".format(item, link))
-
         except:
             pass
 
 
 if __name__ == "__main__":
+    import time
+
+    start_time = time.time()
     scrap_companies()
+    logger.info("Time spent: {} seconds".format(time.time() - start_time))

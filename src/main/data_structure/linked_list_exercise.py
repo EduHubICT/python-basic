@@ -103,9 +103,8 @@ class DoublyLinkedList:
 
     def traversing(self):
         current = self.head
-        get_iterations = []
         while current:
-            get_iterations.append(current.data)
-            logger.info("{}".format(current.data))
+            data = current.data
+            logger.info("{}".format(data))
             current = current.next
-        return get_iterations
+        yield data

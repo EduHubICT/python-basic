@@ -16,4 +16,14 @@ def get_solution_1():
     sl_list.insert_at_beginning(6)
     sl_list.insert_at_beginning(10)
     sl_list.insert_at_beginning(7)
-    logger.info(sl_list.traversing())
+    sl_list.traversing()
+
+
+"""
+2. Write a python program to get the size of a singly linked list
+"""
+
+
+def get_size(sl_list):
+    logger.info(len(sl_list))
+    return len(sl_list)

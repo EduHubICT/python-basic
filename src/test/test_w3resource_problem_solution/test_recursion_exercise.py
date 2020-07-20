@@ -35,6 +35,21 @@ class TestRecursion(unittest.TestCase):
     def test_gcd(self):
         self.assertEqual(get_gcd(6, 10), 2)
 
+    def test_isPal(self):
+        self.assertEqual(isPal(12321), True)
+        self.assertEqual(isPal(12), False)
+
+    def test_printAllKLengthRec(self):
+        list_1 = ["a", "b"]
+        self.assertEqual(printAllKLengthRec(["a"], "", 1, 3), None)
+        self.assertEqual(
+            printAll(list_1, 3),
+            ["aaa", "aab", "aba", "abb", "baa", "bab", "bba", "bbb"],
+        )
+
+    def test_str_to_num(self):
+        self.assertEqual(str_to_num(0, "123"), 123)
+
 
 if __name__ == "__main__":
     unittest.main()

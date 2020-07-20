@@ -1,3 +1,7 @@
+from src.main.logger.py_logger import PyLogger
+
+logger = PyLogger.get_configured_logger()
+
 """
 https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-recursion.php
 """
@@ -138,3 +142,129 @@ def get_gcd(a, b):
         return a
     else:
         return get_gcd(b, a % b)
+
+
+""" geeksforgeeks problem"""
+
+"""
+12.  A recursive Pyhton3 program to check 
+ whether a given number is palindrome or not 
+ """
+
+
+"""A function that reurns true  
+only if num contains one digit """
+
+
+def oneDigit(num):
+
+    # comparison operation is faster
+    # than division operation. So
+    # using following instead of
+    # "return num / 10 == 0;"
+    return (num >= 0) and (num < 10)
+
+
+""" A recursive function to find out whether num is palindrome or not. 
+Initially, dupNum contains address of a copy of num. """
+
+
+def isPalUtil(num, dupNum):
+
+    # Base case (needed for recursion
+    # termination): This statement
+    # mainly compares the first digit
+    # with the last digit
+    if oneDigit(num):
+        return num == (dupNum) % 10
+
+    # This is the key line in this
+    # method. Note that all recursive
+    # calls have a separate copy of
+    # num, but they all share same
+    # copy of *dupNum. We divide num
+    # while moving up the recursion tree
+    if isPalUtil(int(num / 10), dupNum) == False:
+        return -1
+
+    # The following statements are
+    # executed when we move up the
+    # recursion call tree
+    dupNum = int(dupNum / 10)
+
+    # At this point, if num%10
+    # contains i'th digit from
+    # beiginning, then (*dupNum)%10
+    # contains i'th digit from end
+    return num % 10 == (dupNum) % 10
+
+
+""" The main function that uses recursive function isPalUtil() to find out whether num is palindrome or not """
+
+
+def isPal(num):
+    # If num is negative,
+    # make it positive
+    if num < 0:
+        num = -num
+
+    # Create a separate copy of
+    # num, so that modifications
+    # made to address dupNum
+    # don't change the input number.
+    dupNum = num
+    # *dupNum = num
+
+    if isPalUtil(num, dupNum) == 0:
+        return True
+    else:
+        return False
+
+
+""" 13. Python 3 program to print all possible strings of length k """
+
+# to print all possible
+# strings of length k
+list_of_k_length = []
+
+
+def printAllKLengthRec(set, prefix, n, k):
+    # Base case: k is 0,
+    # print prefix
+    # global list_1
+    if k == 0:
+        logger.info(prefix)
+        list_of_k_length.append(prefix)
+        return
+
+    # One by one add all characters
+    # from set and recursively
+    # call for k equals to k-1
+    for i in range(n):
+
+        # Next character of input added
+        newPrefix = prefix + set[i]
+
+        # k is decreased, because
+        # we have added a new character
+        printAllKLengthRec(set, newPrefix, n, k - 1)
+
+
+def printAll(set, k):
+    global list_of_k_length
+    list_of_k_length.clear()
+    printAllKLengthRec(set, "", len(set), k)
+    return list_of_k_length
+
+
+"""
+14. Recursive Implementation of atoi()
+The atoi() function takes a string (which represents an integer) as an argument and returns its value.
+"""
+
+
+def str_to_num(sum_1, str_1):
+    if len(str_1) == 1:
+        return sum_1 * 10 + int(str_1)
+
+    return str_to_num(sum_1 * 10 + int(str_1[0:1]), str_1[1:])
